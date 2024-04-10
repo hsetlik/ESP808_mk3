@@ -29,7 +29,7 @@
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432" (page "4"))
       )
     )
@@ -46,7 +46,7 @@
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432" (page "6"))
       )
     )
@@ -63,7 +63,7 @@
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432" (page "2"))
       )
     )
@@ -80,7 +80,7 @@
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432" (page "3"))
       )
     )
@@ -97,7 +97,7 @@
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432" (page "5"))
       )
     )
@@ -114,7 +114,7 @@
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432" (page "12"))
       )
     )

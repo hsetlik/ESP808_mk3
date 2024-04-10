@@ -1204,11 +1204,20 @@
   (junction (at 51.435 53.975) (diameter 0) (color 0 0 0 0)
     (uuid 8b8e3ddc-d2d9-488f-9585-e808c04a0d89)
   )
+  (junction (at 107.188 196.215) (diameter 0) (color 0 0 0 0)
+    (uuid 977bf7ce-54a9-48a2-ae9a-980e47457676)
+  )
+  (junction (at 48.26 197.485) (diameter 0) (color 0 0 0 0)
+    (uuid 9a423671-a2ba-4c08-aa7f-4e543aab5649)
+  )
   (junction (at 135.89 92.71) (diameter 0) (color 0 0 0 0)
     (uuid a8317141-f527-4da4-9e05-dcbe559414fe)
   )
   (junction (at 381.127 85.09) (diameter 0) (color 0 0 0 0)
     (uuid abf5edad-93c8-4188-bc7b-530e77155f86)
+  )
+  (junction (at 231.013 79.121) (diameter 0) (color 0 0 0 0)
+    (uuid c3d8ebb1-16cd-42a0-b9aa-0fa849f2ba3d)
   )
   (junction (at 103.505 90.17) (diameter 0) (color 0 0 0 0)
     (uuid ccafb756-923e-437a-9077-dfd0b179fad6)
@@ -1223,7 +1232,7 @@
     (uuid f7b14780-17fb-48b7-9156-96dcd0e69673)
   )
 
-  (no_connect (at 225.044 82.804) (uuid 01bf4dc3-52b7-45df-a71d-e288ad2c6d78))
+  (no_connect (at 213.614 81.661) (uuid 01bf4dc3-52b7-45df-a71d-e288ad2c6d78))
   (no_connect (at 132.715 236.855) (uuid 03c4e1be-d105-4868-b52b-89e6ff6bc95f))
   (no_connect (at 274.447 85.09) (uuid 181dff82-8c95-4968-8638-0fa51ead9eea))
   (no_connect (at 365.887 92.71) (uuid 19aecf85-a35b-478d-826d-54411e0b6764))
@@ -1234,17 +1243,17 @@
   (no_connect (at 132.715 234.315) (uuid 69d2bff4-4422-451c-8bcb-d27bd6b71db2))
   (no_connect (at 365.887 69.85) (uuid 733df048-6a8a-47ea-a480-a24a74912853))
   (no_connect (at 365.887 72.39) (uuid 77635644-54b6-4e2a-99ff-2de8961b1479))
-  (no_connect (at 225.044 59.944) (uuid 7f0584ee-176a-41a6-a268-7097ca032001))
+  (no_connect (at 213.614 58.801) (uuid 7f0584ee-176a-41a6-a268-7097ca032001))
   (no_connect (at 365.887 95.25) (uuid 90b6d227-b24b-4b9c-89bc-ab7187b6e352))
   (no_connect (at 365.887 133.35) (uuid 9a4be9e1-4dd4-4ab7-9238-d11e43cbf613))
   (no_connect (at 274.447 77.47) (uuid 9c873989-63e9-4b4c-8a63-097d0cd467ca))
-  (no_connect (at 225.044 62.484) (uuid a1301a0f-898a-4a3a-ab01-789f1f2cf31d))
+  (no_connect (at 213.614 61.341) (uuid a1301a0f-898a-4a3a-ab01-789f1f2cf31d))
   (no_connect (at 274.447 87.63) (uuid a84f7802-7c48-4c0c-9702-14aea85548a5))
   (no_connect (at 132.715 239.395) (uuid cd4e8885-a2ea-4f3c-bf44-5f536b209198))
   (no_connect (at 344.932 160.02) (uuid de0f72f8-7026-4e28-8cb6-9ae1f2ecb86a))
-  (no_connect (at 225.044 65.024) (uuid f198af1e-274f-402c-9f65-5e32403e38b6))
+  (no_connect (at 213.614 63.881) (uuid f198af1e-274f-402c-9f65-5e32403e38b6))
 
-  (wire (pts (xy 225.044 67.564) (xy 232.029 67.564))
+  (wire (pts (xy 213.614 66.421) (xy 220.599 66.421))
     (stroke (width 0) (type default))
     (uuid 008fb48c-9bed-43cf-b0d6-962f727d1931)
   )
@@ -1285,7 +1294,11 @@
     (stroke (width 0) (type default))
     (uuid 0859e872-d446-4811-a8ce-31d8c6fc822f)
   )
-  (wire (pts (xy 45.72 197.485) (xy 51.435 197.485))
+  (wire (pts (xy 107.188 196.215) (xy 109.855 196.215))
+    (stroke (width 0) (type default))
+    (uuid 08dc9c08-2ee1-4437-b2c6-85739f2bc330)
+  )
+  (wire (pts (xy 45.72 197.485) (xy 48.26 197.485))
     (stroke (width 0) (type default))
     (uuid 0a544415-76b7-4afc-9a11-249631e6768d)
   )
@@ -1296,6 +1309,10 @@
   (wire (pts (xy 74.295 64.135) (xy 74.295 64.77))
     (stroke (width 0) (type default))
     (uuid 0c6bf604-2900-4ee4-870d-cf08ee72b1f6)
+  )
+  (wire (pts (xy 231.013 79.121) (xy 231.902 79.121))
+    (stroke (width 0) (type default))
+    (uuid 106a48a1-17f6-494b-8fbe-22e2585b60b9)
   )
   (wire (pts (xy 365.887 102.87) (xy 369.697 102.87))
     (stroke (width 0) (type default))
@@ -1332,6 +1349,10 @@
   (wire (pts (xy 33.655 82.55) (xy 38.735 82.55))
     (stroke (width 0) (type default))
     (uuid 1c043b9c-0f73-4802-949e-2e943a1825b2)
+  )
+  (wire (pts (xy 48.26 193.548) (xy 48.26 197.485))
+    (stroke (width 0) (type default))
+    (uuid 1f8b820b-06bd-4cec-8471-1ab233b1997e)
   )
   (wire (pts (xy 287.782 52.705) (xy 287.782 51.435))
     (stroke (width 0) (type default))
@@ -1397,7 +1418,7 @@
     (stroke (width 0) (type default))
     (uuid 3c8015fa-42e2-47cd-9b9e-a6ac17965d66)
   )
-  (wire (pts (xy 225.044 75.184) (xy 230.124 75.184))
+  (wire (pts (xy 213.614 74.041) (xy 218.694 74.041))
     (stroke (width 0) (type default))
     (uuid 3d2198ea-b831-4d9c-ba76-29f1b9f205ff)
   )
@@ -1437,7 +1458,7 @@
     (stroke (width 0) (type default))
     (uuid 4d6c45a3-4886-4b98-a5f6-62bd3d92ea2e)
   )
-  (wire (pts (xy 225.044 77.724) (xy 228.854 77.724))
+  (wire (pts (xy 213.614 76.581) (xy 217.424 76.581))
     (stroke (width 0) (type default))
     (uuid 4eb8391b-bd6d-4b6f-9354-e42dde3262aa)
   )
@@ -1453,7 +1474,7 @@
     (stroke (width 0) (type default))
     (uuid 554a384e-8634-4a2f-95f7-eeb951d0a035)
   )
-  (wire (pts (xy 225.044 70.104) (xy 230.124 70.104))
+  (wire (pts (xy 213.614 68.961) (xy 218.694 68.961))
     (stroke (width 0) (type default))
     (uuid 55568d8f-ee72-4215-80e6-b289ab5bb8fe)
   )
@@ -1493,7 +1514,7 @@
     (stroke (width 0) (type default))
     (uuid 68e0f776-fd56-43c3-96e2-2fe1cfbf7673)
   )
-  (wire (pts (xy 225.044 80.264) (xy 228.854 80.264))
+  (wire (pts (xy 213.614 79.121) (xy 231.013 79.121))
     (stroke (width 0) (type default))
     (uuid 6a427793-cc37-4f7f-8715-1cd514977500)
   )
@@ -1594,7 +1615,7 @@
     (stroke (width 0) (type default))
     (uuid 86b4b8ce-0fd7-48ff-a482-17b2f23d8f02)
   )
-  (wire (pts (xy 225.044 72.644) (xy 232.029 72.644))
+  (wire (pts (xy 213.614 71.501) (xy 220.599 71.501))
     (stroke (width 0) (type default))
     (uuid 876d2a73-b616-4aa0-889d-2ba18aacf2db)
   )
@@ -1642,7 +1663,7 @@
     (stroke (width 0) (type default))
     (uuid 98899b26-acfc-41c1-a879-107c30343a1b)
   )
-  (wire (pts (xy 180.594 59.944) (xy 181.864 59.944))
+  (wire (pts (xy 169.164 58.801) (xy 170.434 58.801))
     (stroke (width 0) (type default))
     (uuid 9a4a799d-4bec-4b03-80cd-2fab624b8299)
   )
@@ -1674,7 +1695,7 @@
     (stroke (width 0) (type default))
     (uuid a5ce0ddf-abe3-4b38-a749-60b9250c1580)
   )
-  (wire (pts (xy 104.14 196.215) (xy 109.855 196.215))
+  (wire (pts (xy 104.14 196.215) (xy 107.188 196.215))
     (stroke (width 0) (type default))
     (uuid a85e54b0-afe4-4c95-bb43-90c37f40891d)
   )
@@ -1715,6 +1736,10 @@
     (uuid b2bb397f-b5f4-40cc-b174-345950a20225)
   )
 
+  (wire (pts (xy 48.26 197.485) (xy 51.435 197.485))
+    (stroke (width 0) (type default))
+    (uuid b44bae80-e80b-43e2-9e0b-720a33eec0db)
+  )
   (wire (pts (xy 64.135 80.01) (xy 83.82 80.01))
     (stroke (width 0) (type default))
     (uuid b7f40bf6-17f3-4dc2-82ca-e43d3be0bbcb)
@@ -1771,6 +1796,10 @@
     (stroke (width 0) (type default))
     (uuid cc33a278-426b-4953-b7e8-e93d82b43fd9)
   )
+  (wire (pts (xy 231.013 74.549) (xy 231.013 79.121))
+    (stroke (width 0) (type default))
+    (uuid cc872bbb-ce76-4af7-b517-6254d38e2293)
+  )
   (wire (pts (xy 135.89 106.68) (xy 135.89 92.71))
     (stroke (width 0) (type default))
     (uuid cd52e681-f5b0-4d80-a6b4-f2658eb1690b)
@@ -1778,6 +1807,10 @@
   (wire (pts (xy 104.14 207.645) (xy 109.855 207.645))
     (stroke (width 0) (type default))
     (uuid cda4b2d8-8424-488b-82bf-c1465340c3a6)
+  )
+  (wire (pts (xy 107.188 193.167) (xy 107.188 196.215))
+    (stroke (width 0) (type default))
+    (uuid ce4e73e9-a8fa-4fbf-98dc-1d0dbb22a065)
   )
   (wire (pts (xy 287.782 60.325) (xy 293.497 60.325))
     (stroke (width 0) (type default))
@@ -1790,6 +1823,10 @@
   (wire (pts (xy 64.135 92.71) (xy 68.58 92.71))
     (stroke (width 0) (type default))
     (uuid d3cc8a54-2b86-42a0-98ea-ea6b4499ef9f)
+  )
+  (wire (pts (xy 231.013 64.389) (xy 231.013 66.929))
+    (stroke (width 0) (type default))
+    (uuid d442bfd4-93cf-4e6c-8dd7-4ae222205044)
   )
   (wire (pts (xy 365.887 110.49) (xy 369.697 110.49))
     (stroke (width 0) (type default))
@@ -1822,6 +1859,10 @@
   (wire (pts (xy 116.84 68.58) (xy 135.255 68.58))
     (stroke (width 0) (type default))
     (uuid de8ea7cc-2bed-4120-83a3-c54fb255d812)
+  )
+  (wire (pts (xy 48.26 183.388) (xy 48.26 185.928))
+    (stroke (width 0) (type default))
+    (uuid e2dd8169-fcb8-4f50-a1b2-4215dd64a4d3)
   )
   (wire (pts (xy 141.605 81.915) (xy 141.605 83.185))
     (stroke (width 0) (type default))
@@ -1860,6 +1901,10 @@
     (stroke (width 0) (type default))
     (uuid fa6c0d40-d519-4b9b-9c90-44640c0bde3c)
   )
+  (wire (pts (xy 107.188 183.007) (xy 107.188 185.547))
+    (stroke (width 0) (type default))
+    (uuid fb6363de-8fa0-4225-94c6-bf9f1cecbca6)
+  )
   (wire (pts (xy 38.735 92.71) (xy 36.83 92.71))
     (stroke (width 0) (type default))
     (uuid fb6efad4-1bb1-4865-812c-4c97f28e4f14)
@@ -1877,7 +1922,7 @@
     (uuid ff5ce13a-d288-4070-923f-9e5dd37fa1b8)
   )
 
-  (rectangle (start 169.164 43.434) (end 240.919 94.869)
+  (rectangle (start 160.655 43.434) (end 240.919 94.869)
     (stroke (width 0) (type default))
     (fill (type none))
     (uuid 3a4485de-a572-4846-a72e-99f1e23c8221)
@@ -2027,10 +2072,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "MOSI" (shape input) (at 228.854 77.724 0) (fields_autoplaced)
+  (global_label "MOSI" (shape input) (at 217.424 76.581 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 4b6ede8c-7c27-4ca5-a2d4-93f667ab5348)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 236.4354 77.724 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 225.0054 76.581 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -2048,7 +2093,7 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "IO19" (shape input) (at 369.062 80.01 0) (fields_autoplaced)
+  (global_label "USB-" (shape input) (at 369.062 80.01 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 59bec56e-e524-4b1b-96da-cffc6d85af1f)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 376.4015 80.01 0)
@@ -2076,7 +2121,7 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "IO20" (shape input) (at 369.062 77.47 0) (fields_autoplaced)
+  (global_label "USB+" (shape input) (at 369.062 77.47 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 602a347c-02c0-40bc-973f-84ba1764c9f2)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 376.4015 77.47 0)
@@ -2104,10 +2149,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "POT2_CS" (shape input) (at 271.272 92.71 180) (fields_autoplaced)
+  (global_label "POT2_CS" (shape input) (at 271.272 90.17 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 66d89c8a-dda6-4d77-87b1-61d434bf9783)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 260.0621 92.71 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 260.0621 90.17 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
@@ -2118,10 +2163,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "SD_CS" (shape input) (at 228.854 80.264 0) (fields_autoplaced)
+  (global_label "SD_CS" (shape input) (at 231.902 79.121 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 805f405f-42a0-4ff8-a030-2de7454ec2fd)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 237.7658 80.264 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 240.8138 79.121 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -2209,10 +2254,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "MISO" (shape input) (at 232.029 67.564 0) (fields_autoplaced)
+  (global_label "MISO" (shape input) (at 220.599 66.421 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid b291d181-9d0f-4bcb-adf4-18db0934f5e3)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 239.6104 67.564 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 228.1804 66.421 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -2223,10 +2268,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "POT1_CS" (shape input) (at 271.272 90.17 180) (fields_autoplaced)
+  (global_label "POT1_CS" (shape input) (at 271.272 92.71 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid b5849932-0370-4bc7-b04e-69bc2a7bb2e2)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 260.0621 90.17 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 260.0621 92.71 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
@@ -2272,10 +2317,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "SCK" (shape input) (at 232.029 72.644 0) (fields_autoplaced)
+  (global_label "SCK" (shape input) (at 220.599 71.501 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid e7bd472c-f75d-484b-a595-9e361bbdc5e0)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 238.7637 72.644 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 227.3337 71.501 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -2326,7 +2371,7 @@
     (pin "1" (uuid d29d2bfd-b59d-46cd-a0cd-ad5ac5550bd2))
     (pin "2" (uuid dc52b253-817c-4cf2-8cda-62e2adcb6902))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C402") (unit 1)
         )
@@ -2356,7 +2401,7 @@
     )
     (pin "1" (uuid fcc986a6-52e2-43e7-b2de-4811566b7d3b))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0436") (unit 1)
         )
@@ -2390,7 +2435,7 @@
     (pin "1" (uuid 614ba002-a92d-4ee1-a0ba-ae387da2e3d2))
     (pin "2" (uuid b49da27e-6c14-4472-85da-b0d3212b390b))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "R409") (unit 1)
         )
@@ -2423,7 +2468,7 @@
     )
     (pin "1" (uuid 05076ca6-d571-478c-b273-cb8ebc6eb7a5))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0421") (unit 1)
         )
@@ -2457,7 +2502,7 @@
     (pin "1" (uuid 12522805-5bcb-4132-9537-8a86028e302f))
     (pin "2" (uuid 81a60713-adb7-4ad5-83cf-90925fa59df4))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C407") (unit 1)
         )
@@ -2490,7 +2535,7 @@
     )
     (pin "1" (uuid 813a495f-561b-4a92-94e9-8c2a0b5ac005))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0405") (unit 1)
         )
@@ -2520,7 +2565,7 @@
     )
     (pin "1" (uuid 7745dccd-c0e2-4d1c-8e13-dcb284784bfa))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0420") (unit 1)
         )
@@ -2553,7 +2598,7 @@
     )
     (pin "1" (uuid a56694af-4f9a-41ef-a2f3-c1617d6a81f8))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0415") (unit 1)
         )
@@ -2586,7 +2631,7 @@
     )
     (pin "1" (uuid 4764732d-7cd0-4315-b0c5-4993dd53c098))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0418") (unit 1)
         )
@@ -2619,7 +2664,7 @@
     )
     (pin "1" (uuid cb0b84eb-69bf-4d05-af90-b4be64ed74bf))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0404") (unit 1)
         )
@@ -2649,7 +2694,7 @@
     )
     (pin "1" (uuid 7f30f4ab-2bfb-4404-a96f-ff0f514e5917))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0432") (unit 1)
         )
@@ -2660,6 +2705,37 @@
         )
         (path "/c34b0bf2-bf4f-4f09-a49d-1acd5b47c7ca/b7b70d81-d74b-4739-995e-589a97e00ba9"
           (reference "#PWR0319") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R_US") (at 107.188 189.357 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 3c839c54-d673-4e78-9e75-222249e8fc07)
+    (property "Reference" "R406" (at 109.855 188.087 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "47k" (at 109.855 190.627 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "PCM_Resistor_SMD_AKL:R_0805_2012Metric" (at 108.204 189.611 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 107.188 189.357 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 80164329-6bce-4e59-a09a-d39bd26ce427))
+    (pin "2" (uuid 462f6bc5-2035-4a1f-9bba-7f223c7ca553))
+    (instances
+      (project "ESP808_mk3_rev2"
+        (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
+          (reference "R406") (unit 1)
+        )
+      )
+      (project "Quadriscope"
+        (path "/b6082534-8496-42f5-914d-c32eba9832ab"
+          (reference "R123") (unit 1)
         )
       )
     )
@@ -2683,7 +2759,7 @@
     (pin "1" (uuid f1474130-f90f-4831-ad82-3ff3ab087dda))
     (pin "2" (uuid bc8c2b48-18c8-4418-95f2-6557796dfd0c))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C403") (unit 1)
         )
@@ -2716,7 +2792,7 @@
     )
     (pin "1" (uuid 27a71c8d-2ecf-4573-8bf1-875159278972))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0424") (unit 1)
         )
@@ -2747,7 +2823,7 @@
     (pin "1" (uuid 07990d48-33c1-4b49-b3a3-40037ca22d70))
     (pin "2" (uuid 34fa6c72-8318-402d-9b3a-1258e6cc2a91))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C405") (unit 1)
         )
@@ -2781,7 +2857,7 @@
     (pin "1" (uuid 91e3815e-6c6e-41a9-a60e-55d860c3d38f))
     (pin "2" (uuid d7147463-54f2-4d07-bd47-cdc2e6f46e9d))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C404") (unit 1)
         )
@@ -2814,7 +2890,7 @@
     )
     (pin "1" (uuid e4c36c51-8886-4f9a-a0e2-766804005f91))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0407") (unit 1)
         )
@@ -2844,7 +2920,7 @@
     )
     (pin "1" (uuid 40e145bb-fc9d-42e0-bdc9-88ca15d11b6a))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0433") (unit 1)
         )
@@ -2878,7 +2954,7 @@
     (pin "1" (uuid 22879a3b-b015-4923-93c4-a0d53a5bd914))
     (pin "2" (uuid 06c319a6-58c5-4998-8f38-b5baff8b88ca))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "SW401") (unit 1)
         )
@@ -2908,7 +2984,7 @@
     )
     (pin "1" (uuid 2633c390-a7eb-42b4-a618-d951707c3251))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0426") (unit 1)
         )
@@ -2941,7 +3017,7 @@
     )
     (pin "1" (uuid 2ebb2c77-0087-4bc9-a5da-b25bb3eaa9d9))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0401") (unit 1)
         )
@@ -2971,7 +3047,7 @@
     )
     (pin "1" (uuid 414b4f8c-cbe4-476a-8fd9-66bbe92055b2))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0431") (unit 1)
         )
@@ -3011,7 +3087,7 @@
     (pin "4" (uuid f5c0a084-17ca-46bd-8c56-2a9f7f436259))
     (pin "8" (uuid 9742110d-2da7-4ff2-a8ad-755bb12e22da))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "U402") (unit 3)
         )
@@ -3044,7 +3120,7 @@
     )
     (pin "1" (uuid b43f0f54-a28a-4107-9ace-a5b0dc9ca865))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0416") (unit 1)
         )
@@ -3077,7 +3153,7 @@
     )
     (pin "1" (uuid 7f45ca68-e253-4036-b562-b937c00a9e80))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0402") (unit 1)
         )
@@ -3147,7 +3223,7 @@
     (pin "8" (uuid 9589afa1-edd2-44d9-b937-32c0c61d0160))
     (pin "9" (uuid 1b71bfd5-98f7-4899-abfc-178c827cd450))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "U401") (unit 1)
         )
@@ -3155,6 +3231,67 @@
       (project "Quadriscope"
         (path "/b6082534-8496-42f5-914d-c32eba9832ab"
           (reference "U101") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3V") (at 107.188 183.007 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 791201f4-befc-435f-a6dd-8436012622c1)
+    (property "Reference" "#PWR0440" (at 107.188 186.817 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3V" (at 107.188 177.927 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 107.188 183.007 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 107.188 183.007 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 51c0f995-1be1-4376-a19c-c5e341658b8c))
+    (instances
+      (project "ESP808_mk3_rev2"
+        (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
+          (reference "#PWR0440") (unit 1)
+        )
+      )
+      (project "Quadriscope"
+        (path "/b6082534-8496-42f5-914d-c32eba9832ab"
+          (reference "#PWR0164") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R_US") (at 231.013 70.739 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 7ab86313-e603-48e4-96f6-0a3bcd280ecd)
+    (property "Reference" "R404" (at 233.68 69.469 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "47k" (at 233.68 72.009 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "PCM_Resistor_SMD_AKL:R_0805_2012Metric" (at 232.029 70.993 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 231.013 70.739 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 2787a3fd-6c89-4ec5-ac38-dc82807ebc32))
+    (pin "2" (uuid f71fdab8-a3cb-4a63-a224-b531cfcda818))
+    (instances
+      (project "ESP808_mk3_rev2"
+        (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
+          (reference "R404") (unit 1)
+        )
+      )
+      (project "Quadriscope"
+        (path "/b6082534-8496-42f5-914d-c32eba9832ab"
+          (reference "R123") (unit 1)
         )
       )
     )
@@ -3177,7 +3314,7 @@
     )
     (pin "1" (uuid 66ffce55-154e-4411-abf0-addb2319dcea))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0412") (unit 1)
         )
@@ -3210,7 +3347,7 @@
     )
     (pin "1" (uuid e65759c4-5847-4ba4-8394-50463dd1b657))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0437") (unit 1)
         )
@@ -3243,7 +3380,7 @@
     )
     (pin "1" (uuid 073dc32d-1e16-42b5-8bc6-8ab507019fee))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0408") (unit 1)
         )
@@ -3256,24 +3393,24 @@
     )
   )
 
-  (symbol (lib_id "power:+3.3V") (at 230.124 75.184 270) (unit 1)
+  (symbol (lib_id "power:+3.3V") (at 218.694 74.041 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8491a5d1-4864-45ec-b6aa-a182b7d3d566)
-    (property "Reference" "#PWR0411" (at 226.314 75.184 0)
+    (property "Reference" "#PWR0411" (at 214.884 74.041 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+3.3V" (at 233.299 75.184 90)
+    (property "Value" "+3.3V" (at 221.869 74.041 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 230.124 75.184 0)
+    (property "Footprint" "" (at 218.694 74.041 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 230.124 75.184 0)
+    (property "Datasheet" "" (at 218.694 74.041 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 15c8ac7d-ee93-4568-bb63-9226b1d886fe))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0411") (unit 1)
         )
@@ -3311,7 +3448,7 @@
     )
     (pin "1" (uuid 13ed8b76-8bb5-45db-b842-4b65386e2370))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0438") (unit 1)
         )
@@ -3327,24 +3464,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 180.594 59.944 270) (unit 1)
+  (symbol (lib_id "power:GND") (at 169.164 58.801 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8a73290a-3f62-45b7-a14a-c34e1dc50800)
-    (property "Reference" "#PWR0409" (at 174.244 59.944 0)
+    (property "Reference" "#PWR0409" (at 162.814 58.801 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 176.784 59.944 90)
+    (property "Value" "GND" (at 165.354 58.801 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 180.594 59.944 0)
+    (property "Footprint" "" (at 169.164 58.801 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 180.594 59.944 0)
+    (property "Datasheet" "" (at 169.164 58.801 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 7e53a4e5-d0d1-41a2-b45e-6e2390aa3ae1))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0409") (unit 1)
         )
@@ -3383,7 +3520,7 @@
     (pin "1" (uuid 911a0c8e-bddf-4fc2-b591-c7e0d4e6413f))
     (pin "2" (uuid 2a782942-ae84-48f7-bd59-0dbf57419776))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C411") (unit 1)
         )
@@ -3416,7 +3553,7 @@
     )
     (pin "1" (uuid 1ba63af2-649d-49e7-80f8-230c1194450c))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0417") (unit 1)
         )
@@ -3450,7 +3587,7 @@
     (pin "1" (uuid aeec2e75-e6db-40f4-ae5a-84cb65b0004c))
     (pin "2" (uuid 6c5d9b69-0eb1-4716-bf70-ca20b722f004))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C401") (unit 1)
         )
@@ -3481,7 +3618,7 @@
     (pin "1" (uuid 959c3a74-38cf-48e8-9180-949b8de77eec))
     (pin "2" (uuid e3e4aa52-6b69-44ca-b876-2fb6e6e4cebe))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C409") (unit 1)
         )
@@ -3514,7 +3651,7 @@
     )
     (pin "1" (uuid ef92c8e2-067a-45f7-a996-b6e153184e30))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0413") (unit 1)
         )
@@ -3547,7 +3684,7 @@
     )
     (pin "1" (uuid f258bfc9-6ac8-4813-9a37-43a66bbcea4b))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0422") (unit 1)
         )
@@ -3563,19 +3700,19 @@
     )
   )
 
-  (symbol (lib_id "Connector:Micro_SD_Card_Det2") (at 202.184 72.644 180) (unit 1)
+  (symbol (lib_id "Connector:Micro_SD_Card_Det2") (at 190.754 71.501 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9f2a2104-df47-4dea-b04a-407c4e1ecd4c)
-    (property "Reference" "J401" (at 201.549 51.054 0)
+    (property "Reference" "J401" (at 190.119 49.911 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Micro_SD_Card_Det2" (at 201.549 53.594 0)
+    (property "Value" "Micro_SD_Card_Det2" (at 190.119 52.451 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector_Card:microSD_HC_Hirose_DM3D-SF" (at 150.114 90.424 0)
+    (property "Footprint" "Connector_Card:microSD_HC_Hirose_DM3D-SF" (at 138.684 89.281 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://www.hirose.com/en/product/document?clcode=&productname=&series=DM3&documenttype=Catalog&lang=en&documentid=D49662_en" (at 199.644 75.184 0)
+    (property "Datasheet" "https://www.hirose.com/en/product/document?clcode=&productname=&series=DM3&documenttype=Catalog&lang=en&documentid=D49662_en" (at 188.214 74.041 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 2a67a636-29ad-4dfc-968c-86e2a6c8c157))
@@ -3590,7 +3727,7 @@
     (pin "8" (uuid f08350a3-8435-4fa9-ae90-298e21240a63))
     (pin "9" (uuid 353613cc-0345-45ef-8c92-3889cb405ec2))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "J401") (unit 1)
         )
@@ -3620,7 +3757,7 @@
     )
     (pin "1" (uuid cfe0b7e5-707b-4270-a6c3-b8f88bc04cf0))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0414") (unit 1)
         )
@@ -3654,7 +3791,7 @@
     (pin "1" (uuid 5604d6da-c39e-4b84-9c9e-f28305f6cca2))
     (pin "2" (uuid e4cd3720-7ea1-440e-8ff3-cf718e56ad73))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "R403") (unit 1)
         )
@@ -3694,7 +3831,7 @@
     (pin "4" (uuid a09b9be3-b0f5-4b76-9884-f58adbda1117))
     (pin "8" (uuid 0e787936-ff05-4e66-bf20-50285e632d18))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "U402") (unit 2)
         )
@@ -3727,7 +3864,7 @@
     )
     (pin "1" (uuid b138bf01-e204-465f-8d55-a2ad23ec5c19))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0434") (unit 1)
         )
@@ -3760,7 +3897,7 @@
     )
     (pin "1" (uuid 5add4a88-7031-4307-ae6d-206d2f87ca47))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0403") (unit 1)
         )
@@ -3793,7 +3930,7 @@
     )
     (pin "1" (uuid 0dd715ae-1235-4e3f-9e85-3e0b30483e35))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0429") (unit 1)
         )
@@ -3826,7 +3963,7 @@
     )
     (pin "1" (uuid 29eec5d1-c657-4298-996a-8b07e82913c6))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0428") (unit 1)
         )
@@ -3878,7 +4015,7 @@
     (pin "8" (uuid 9d62167e-8624-45d7-be9f-9715ae435ed3))
     (pin "9" (uuid 449f6de7-ced2-4406-9511-911047fb4a5e))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "U404") (unit 1)
         )
@@ -3904,7 +4041,7 @@
     (pin "1" (uuid ad31df5a-7a3c-4a2e-bee8-a08c46396e16))
     (pin "2" (uuid 848ad19f-8677-48ff-a1d7-5ba5e7f77fbe))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "SW402") (unit 1)
         )
@@ -3934,7 +4071,7 @@
     )
     (pin "1" (uuid fa70ab67-503c-4265-9069-4cfd840441fc))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0419") (unit 1)
         )
@@ -3945,6 +4082,37 @@
         )
         (path "/c34b0bf2-bf4f-4f09-a49d-1acd5b47c7ca/b7b70d81-d74b-4739-995e-589a97e00ba9"
           (reference "#PWR0319") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R_US") (at 48.26 189.738 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid bb8bc639-2728-4f5f-84f9-e7114003405a)
+    (property "Reference" "R405" (at 50.927 188.468 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "47k" (at 50.927 191.008 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "PCM_Resistor_SMD_AKL:R_0805_2012Metric" (at 49.276 189.992 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 48.26 189.738 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 8cb3f46a-02d6-45be-a324-c7e68f467429))
+    (pin "2" (uuid 6ef57b08-5254-4e5a-885e-50688a142f7e))
+    (instances
+      (project "ESP808_mk3_rev2"
+        (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
+          (reference "R405") (unit 1)
+        )
+      )
+      (project "Quadriscope"
+        (path "/b6082534-8496-42f5-914d-c32eba9832ab"
+          (reference "R123") (unit 1)
         )
       )
     )
@@ -3970,7 +4138,7 @@
     (pin "3" (uuid e9a8d9b2-599b-48fb-ba47-54b03ffb383f))
     (pin "4" (uuid f5b27343-b747-473d-b31e-82bad3664cbc))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "D401") (unit 1)
         )
@@ -4000,7 +4168,7 @@
     )
     (pin "1" (uuid edb48937-9a29-4be0-81bd-7ccd82d9588a))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0430") (unit 1)
         )
@@ -4034,7 +4202,7 @@
     (pin "1" (uuid 6a559dd6-c020-443d-856b-f50e20281ab8))
     (pin "2" (uuid 31f4f7a5-fcb7-4589-ab97-5d6b87ea2d46))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C408") (unit 1)
         )
@@ -4067,7 +4235,7 @@
     )
     (pin "1" (uuid f10fe760-1eab-4a49-9f59-099352e434da))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0423") (unit 1)
         )
@@ -4119,7 +4287,7 @@
     (pin "8" (uuid 8b0d3b2d-1944-4d0a-845e-8616e3fb9d8a))
     (pin "9" (uuid 6127108c-cd05-4422-abcd-0a9de8282766))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "U403") (unit 1)
         )
@@ -4153,7 +4321,7 @@
     (pin "1" (uuid 7c62562b-a581-4cbb-91e1-7d8747ab6c3d))
     (pin "2" (uuid 9553f30e-3fdd-4eb2-80bc-4bc8d999c85b))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "R401") (unit 1)
         )
@@ -4184,7 +4352,7 @@
     (pin "1" (uuid e2816164-206f-424e-847c-590ae793b16f))
     (pin "2" (uuid 7f7b1793-a4ad-40cb-bade-4044f9456cb2))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "R402") (unit 1)
         )
@@ -4217,7 +4385,7 @@
     )
     (pin "1" (uuid 95d3b436-2725-41eb-a4e7-2cf80292f826))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0406") (unit 1)
         )
@@ -4266,7 +4434,7 @@
     (pin "8" (uuid 05a6f740-7161-4754-854d-318da710ca1f))
     (pin "9" (uuid aa35f94d-ccdd-4fb3-82fc-9a51ae87f4d9))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "U405") (unit 1)
         )
@@ -4274,24 +4442,24 @@
     )
   )
 
-  (symbol (lib_id "power:GND") (at 230.124 70.104 90) (unit 1)
+  (symbol (lib_id "power:GND") (at 218.694 68.961 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e1cf1b17-813b-420e-a220-afebfa35da5e)
-    (property "Reference" "#PWR0410" (at 236.474 70.104 0)
+    (property "Reference" "#PWR0410" (at 225.044 68.961 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "GND" (at 233.934 70.104 90)
+    (property "Value" "GND" (at 222.504 68.961 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 230.124 70.104 0)
+    (property "Footprint" "" (at 218.694 68.961 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "" (at 230.124 70.104 0)
+    (property "Datasheet" "" (at 218.694 68.961 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 45b767b2-367d-466a-833b-577b3f146743))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0410") (unit 1)
         )
@@ -4307,6 +4475,36 @@
         )
         (path "/c34b0bf2-bf4f-4f09-a49d-1acd5b47c7ca/b7b70d81-d74b-4739-995e-589a97e00ba9"
           (reference "#PWR0350") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3V") (at 231.013 64.389 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid e4c7e37b-9dcd-4d9e-96b5-dfab00dc7a7f)
+    (property "Reference" "#PWR0425" (at 231.013 68.199 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3V" (at 231.013 59.309 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 231.013 64.389 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 231.013 64.389 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid ecb5fa86-0310-4eda-8022-1174298b84e3))
+    (instances
+      (project "ESP808_mk3_rev2"
+        (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
+          (reference "#PWR0425") (unit 1)
+        )
+      )
+      (project "Quadriscope"
+        (path "/b6082534-8496-42f5-914d-c32eba9832ab"
+          (reference "#PWR0164") (unit 1)
         )
       )
     )
@@ -4330,7 +4528,7 @@
     (pin "1" (uuid 572b9d93-6b52-4e47-b1f3-bc49c0f2a379))
     (pin "2" (uuid db1cde73-d064-4777-a290-e4e1e6e04a62))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C406") (unit 1)
         )
@@ -4370,7 +4568,7 @@
     (pin "4" (uuid f3908176-ee9d-4193-94a2-0c8414991b3b))
     (pin "8" (uuid e3c3f1e2-8edf-4991-be89-5fe14727a112))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "U402") (unit 1)
         )
@@ -4404,7 +4602,7 @@
     (pin "1" (uuid bad10f33-de83-43e5-8fff-9824044436f4))
     (pin "2" (uuid deaea3dc-0047-43dd-a340-dd64279ef6cf))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "C410") (unit 1)
         )
@@ -4437,7 +4635,7 @@
     )
     (pin "1" (uuid 286a0d0b-4b3b-4a7f-84ab-a33e455e57ee))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0427") (unit 1)
         )
@@ -4448,6 +4646,36 @@
         )
         (path "/c34b0bf2-bf4f-4f09-a49d-1acd5b47c7ca/b7b70d81-d74b-4739-995e-589a97e00ba9"
           (reference "#PWR0319") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:+3.3V") (at 48.26 183.388 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid f92289f9-d3a7-4c1c-877d-7c31859544cd)
+    (property "Reference" "#PWR0439" (at 48.26 187.198 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3.3V" (at 48.26 178.308 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 48.26 183.388 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 48.26 183.388 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 93123d42-74d5-49e3-9c3e-378922b5358b))
+    (instances
+      (project "ESP808_mk3_rev2"
+        (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
+          (reference "#PWR0439") (unit 1)
+        )
+      )
+      (project "Quadriscope"
+        (path "/b6082534-8496-42f5-914d-c32eba9832ab"
+          (reference "#PWR0164") (unit 1)
         )
       )
     )
@@ -4470,7 +4698,7 @@
     )
     (pin "1" (uuid 45b09e5b-d7eb-4653-b7b2-ff92d688a672))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "#PWR0435") (unit 1)
         )
@@ -4504,7 +4732,7 @@
     (pin "1" (uuid b438a4c6-60c5-4f18-9c42-1366fd4956af))
     (pin "2" (uuid 9cbf1962-7ad3-40b5-9f47-28f4079075d0))
     (instances
-      (project "ESP808_mk3"
+      (project "ESP808_mk3_rev2"
         (path "/1b0f4827-7224-4696-9105-e83073878432/12afefba-537f-4d88-bb0b-d3898664142d"
           (reference "R408") (unit 1)
         )
