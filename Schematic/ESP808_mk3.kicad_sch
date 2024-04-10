@@ -1,0 +1,126 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 1b0f4827-7224-4696-9105-e83073878432)
+
+  (paper "A4")
+
+  (title_block
+    (rev "1")
+  )
+
+  (lib_symbols
+  )
+
+
+  (rectangle (start 20.955 29.21) (end 115.57 135.128)
+    (stroke (width 0) (type default))
+    (fill (type none))
+    (uuid b1bc7201-89ac-4ee1-be97-aeacc564eabf)
+  )
+
+  (sheet (at 69.85 32.385) (size 40.005 27.305) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 12afefba-537f-4d88-bb0b-d3898664142d)
+    (property "Sheetname" "MCU" (at 69.85 31.6734 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "MCU.kicad_sch" (at 69.85 60.2746 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "ESP808_mk3"
+        (path "/1b0f4827-7224-4696-9105-e83073878432" (page "4"))
+      )
+    )
+  )
+
+  (sheet (at 22.86 100.33) (size 43.18 29.21) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 18dceacf-15c5-4141-be81-d0cbda103a53)
+    (property "Sheetname" "Mixer" (at 22.86 99.6184 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Mixer.kicad_sch" (at 22.86 130.1246 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "ESP808_mk3"
+        (path "/1b0f4827-7224-4696-9105-e83073878432" (page "6"))
+      )
+    )
+  )
+
+  (sheet (at 71.12 100.33) (size 38.1 27.94) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 4bfdf2d1-7222-472c-a4ac-3add91b9e368)
+    (property "Sheetname" "Controls" (at 71.12 99.6184 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Controls.kicad_sch" (at 71.12 128.8546 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "ESP808_mk3"
+        (path "/1b0f4827-7224-4696-9105-e83073878432" (page "2"))
+      )
+    )
+  )
+
+  (sheet (at 22.86 65.405) (size 40.64 27.305) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 6d702576-90e6-405d-b6f2-7489acbb0af2)
+    (property "Sheetname" "Analog" (at 22.86 64.6934 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Analog.kicad_sch" (at 22.86 93.2946 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "ESP808_mk3"
+        (path "/1b0f4827-7224-4696-9105-e83073878432" (page "3"))
+      )
+    )
+  )
+
+  (sheet (at 23.495 32.385) (size 40.005 27.305) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 916be19a-d41e-4743-9857-28edae22717a)
+    (property "Sheetname" "Power Supply" (at 23.495 31.6734 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "PowerSupply.kicad_sch" (at 23.495 60.2746 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "ESP808_mk3"
+        (path "/1b0f4827-7224-4696-9105-e83073878432" (page "5"))
+      )
+    )
+  )
+
+  (sheet (at 69.85 65.405) (size 40.005 27.305) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 9542db96-bf35-4b94-884a-d287318462ad)
+    (property "Sheetname" "IO" (at 69.85 64.6934 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "IO.kicad_sch" (at 69.85 93.2946 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "ESP808_mk3"
+        (path "/1b0f4827-7224-4696-9105-e83073878432" (page "12"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
