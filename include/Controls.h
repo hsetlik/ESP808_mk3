@@ -24,7 +24,6 @@ namespace Enc
     bool isLeftPin(uint8_t pin);
 }
 
-// stores the business logic for our four encoders
 
 class Encoders
 {
@@ -39,5 +38,45 @@ public:
     void interruptSent(uint8_t pin);
     void setCallback(uint8_t encoder, EncCallback cb);
 
-
 };
+
+//---------------------------------------------------------------------
+
+#define BUTTON_CHECK_HZ 800
+
+
+enum ButtonID
+{
+    Seq1,
+    Seq2,
+    Seq3,
+    Seq4,
+    Seq5,
+    Seq6,
+    Seq7,
+    Seq8,
+    Seq9,
+    Seq10,
+    Seq11,
+    Seq12,
+    Seq13,
+    Seq14,
+    Seq15,
+    Seq16,
+    Enc1,
+    Enc2,
+    Enc3,
+    Enc4,
+    PgLeft,
+    PgRight,
+    Load,
+    Save,
+    Alt,
+    Playtoggle
+};
+
+
+
+
+
+
