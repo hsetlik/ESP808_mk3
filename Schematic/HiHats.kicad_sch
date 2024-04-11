@@ -1865,7 +1865,7 @@
     (pin "1" (uuid 556b9f39-220d-4a67-bb45-ff959ec429b6))
     (pin "2" (uuid 71af5423-ff01-4244-b9e0-e22f0f0f91d8))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C922") (unit 1)
         )
@@ -1901,7 +1901,7 @@
     (pin "1" (uuid 2bb15b4b-d4db-4fda-9075-32cf4a9dc8f1))
     (pin "2" (uuid b7747bb2-470e-47e8-a173-fbcf326f0ade))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R905") (unit 1)
         )
@@ -1937,7 +1937,7 @@
     (pin "1" (uuid 58005ffe-627c-48e4-be05-9841505510b6))
     (pin "2" (uuid 842cf6f0-1ef0-401e-8c68-a81e6b438e46))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R950") (unit 1)
         )
@@ -1973,7 +1973,7 @@
     (pin "1" (uuid 0651d04e-b0c8-4f2c-b848-4e50dadb4bbc))
     (pin "2" (uuid cc1cf36c-0791-460a-bab8-03de62983bdd))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R930") (unit 1)
         )
@@ -2010,7 +2010,7 @@
     (pin "2" (uuid e18ea9c0-335e-49a6-ac64-57f91473fbec))
     (pin "3" (uuid 824fb672-4d1e-4b03-b304-f35c9d604834))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q917") (unit 1)
         )
@@ -2046,7 +2046,7 @@
     (pin "1" (uuid 5a867357-1b1b-4812-93f7-c08b5d841c35))
     (pin "2" (uuid 64d3ec88-4d6f-43db-a77d-8b5ce10f6454))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R908") (unit 1)
         )
@@ -2082,7 +2082,7 @@
     (pin "1" (uuid 13b2331f-44e0-434c-82be-affcaf025683))
     (pin "2" (uuid c4bcc37e-88d4-40e7-8ac2-d6e2701d8dee))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C903") (unit 1)
         )
@@ -2124,7 +2124,7 @@
     (pin "4" (uuid 21050658-5b88-4ea4-a4e4-361c1d12290c))
     (pin "8" (uuid 9194a75d-b65f-46ec-ab74-9d0e265eb1dd))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "U901") (unit 3)
         )
@@ -2159,7 +2159,7 @@
     )
     (pin "1" (uuid 1ec3e2f9-a60e-41cc-8f73-6c014bf0580e))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0922") (unit 1)
         )
@@ -2195,7 +2195,7 @@
     (pin "1" (uuid 35967e2d-1622-4de5-a8d4-33933dfcf8e6))
     (pin "2" (uuid d983b2d6-2e24-4fb2-8218-320577f7be93))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R919") (unit 1)
         )
@@ -2231,7 +2231,7 @@
     (pin "1" (uuid d8bb5919-f751-4b6a-b06f-ceb3564a8fa3))
     (pin "2" (uuid 4dc5072d-6163-4917-8745-04a7330f7771))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R903") (unit 1)
         )
@@ -2266,7 +2266,7 @@
     )
     (pin "1" (uuid 98763bb2-7c30-4d2e-9ed7-86d70128f688))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0937") (unit 1)
         )
@@ -2302,7 +2302,7 @@
     (pin "1" (uuid 5c619be4-d90d-43b4-b039-7e77d8a2d8e7))
     (pin "2" (uuid a7aab212-1838-42f2-b35b-8a08b7e8b0d6))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R915") (unit 1)
         )
@@ -2337,7 +2337,7 @@
     )
     (pin "1" (uuid 62638ac3-a6ab-4adc-a1d6-c91e60670407))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0929") (unit 1)
         )
@@ -2379,7 +2379,7 @@
     (pin "1" (uuid 620b41c0-e66d-4136-822c-e8883fa777aa))
     (pin "2" (uuid 031352b4-45d2-45fb-8c82-4c1b34e37dc1))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "D904") (unit 1)
         )
@@ -2415,7 +2415,7 @@
     (pin "1" (uuid 49459799-3ec2-40a2-92ce-7fb54a3b78d6))
     (pin "2" (uuid f355e319-a721-4722-9e37-15868ca43bc7))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R914") (unit 1)
         )
@@ -2450,7 +2450,7 @@
     )
     (pin "1" (uuid 99ba5a24-2cd7-4011-a5b6-5a941fe7d8c8))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0908") (unit 1)
         )
@@ -2485,7 +2485,7 @@
     )
     (pin "1" (uuid 3e43c629-766f-4c88-83b1-70f7d829ed82))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0909") (unit 1)
         )
@@ -2520,7 +2520,7 @@
     )
     (pin "1" (uuid 995c514c-5c41-44ae-a576-345368084a56))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0927") (unit 1)
         )
@@ -2555,7 +2555,7 @@
     )
     (pin "1" (uuid d2053b55-b4b5-4f99-abf8-8101593574d5))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0911") (unit 1)
         )
@@ -2591,7 +2591,7 @@
     (pin "1" (uuid feb01f7c-87a3-4919-947f-c28567f963a3))
     (pin "2" (uuid 7a9ad53b-1c4b-4efd-b9a8-9a4829ef5cb2))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R917") (unit 1)
         )
@@ -2627,7 +2627,7 @@
     (pin "1" (uuid 2fe8e051-5df5-4d2b-bf71-e34abc1417a1))
     (pin "2" (uuid 0acde7d2-ea78-450f-851b-ae103251b558))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C917") (unit 1)
         )
@@ -2663,7 +2663,7 @@
     (pin "1" (uuid 4678c8ea-21b0-43f5-b403-31d7b718c826))
     (pin "2" (uuid a28f4590-035f-490f-9423-b8fdf3236d24))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C918") (unit 1)
         )
@@ -2698,7 +2698,7 @@
     )
     (pin "1" (uuid bfd7dbf0-d780-4494-86dd-4a676efda94c))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0921") (unit 1)
         )
@@ -2734,7 +2734,7 @@
     (pin "1" (uuid d4c2caa6-96b6-4ccc-9805-0362c50d8dbf))
     (pin "2" (uuid c15deec2-b868-4343-b49e-44f2ff8e18de))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R922") (unit 1)
         )
@@ -2771,7 +2771,7 @@
     (pin "2" (uuid c73eafbe-b5ce-4c37-b6d7-4e87fe7fc6b1))
     (pin "3" (uuid 736d8044-0f9e-46df-9170-43d47984abe9))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q902") (unit 1)
         )
@@ -2807,7 +2807,7 @@
     (pin "1" (uuid 674d1da5-3d32-43c0-9167-6a212acbbb77))
     (pin "2" (uuid 0826b5b3-d8ed-47dc-96c1-a647826511d7))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C902") (unit 1)
         )
@@ -2844,7 +2844,7 @@
     (pin "2" (uuid aac94e8b-524f-4502-86e3-97351a269147))
     (pin "3" (uuid 0c649b63-5086-4e5c-bfdc-4039e1190b22))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q914") (unit 1)
         )
@@ -2880,7 +2880,7 @@
     (pin "1" (uuid 217a9a7b-f309-4084-95a3-b6eba6e3f337))
     (pin "2" (uuid ef317de0-808e-4375-920b-9da293c9e452))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C915") (unit 1)
         )
@@ -2916,7 +2916,7 @@
     (pin "1" (uuid cdd2df83-c088-418c-aceb-e1df4fa1542b))
     (pin "2" (uuid cc733235-2142-457b-83a9-35d38d75e263))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C921") (unit 1)
         )
@@ -2953,7 +2953,7 @@
     (pin "2" (uuid 70207f92-034e-46af-a2a8-9e186c313d55))
     (pin "3" (uuid 260aad7c-6801-4deb-b0e9-45b730429f21))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q908") (unit 1)
         )
@@ -2988,7 +2988,7 @@
     )
     (pin "1" (uuid 74d926f1-62ed-4a0b-b549-2281df8c9169))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0907") (unit 1)
         )
@@ -3024,7 +3024,7 @@
     (pin "1" (uuid ecae4485-79a1-48ed-b744-6c78db1a81a8))
     (pin "2" (uuid 9cc85e6e-f1f9-444c-9a69-f02c049536e3))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R936") (unit 1)
         )
@@ -3059,7 +3059,7 @@
     )
     (pin "1" (uuid 56b7a00b-f653-4eb4-8d48-f471a6391933))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0919") (unit 1)
         )
@@ -3095,7 +3095,7 @@
     (pin "1" (uuid 8bde61ea-559f-448d-8fcd-4b9dc16ab808))
     (pin "2" (uuid d4ac4d4b-716c-44c0-9f89-9599daf2b751))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R911") (unit 1)
         )
@@ -3131,7 +3131,7 @@
     (pin "1" (uuid efa293b0-8245-4d07-95f9-39d9ef96930a))
     (pin "2" (uuid 9957d52b-1beb-465d-853a-df462421d89f))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R904") (unit 1)
         )
@@ -3168,7 +3168,7 @@
     (pin "2" (uuid 624c5ef2-55ce-48a0-b5fc-f1f8e1f7dd09))
     (pin "3" (uuid fe211953-efa8-414e-b1fc-1de0e381859b))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q911") (unit 1)
         )
@@ -3204,7 +3204,7 @@
     (pin "1" (uuid 6933f5d8-a2f1-445f-8ec9-8e57a2c81fd5))
     (pin "2" (uuid 35575a34-26a3-4855-9a29-2b3a368c2177))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R941") (unit 1)
         )
@@ -3239,7 +3239,7 @@
     )
     (pin "1" (uuid dc2d560f-1437-4633-afc7-24a6ea22f272))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0901") (unit 1)
         )
@@ -3275,7 +3275,7 @@
     (pin "1" (uuid ca7f825d-8575-4840-9827-3dd45793bde1))
     (pin "2" (uuid 9f8c6e25-d922-4e2d-87b3-d4e5f35bb660))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R906") (unit 1)
         )
@@ -3310,7 +3310,7 @@
     )
     (pin "1" (uuid 776c8a79-649a-4031-87ff-e1eb7a597b09))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0928") (unit 1)
         )
@@ -3345,7 +3345,7 @@
     )
     (pin "1" (uuid 6d210aee-7ad3-4f91-82f7-c55fa9c3cac1))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0902") (unit 1)
         )
@@ -3380,7 +3380,7 @@
     )
     (pin "1" (uuid a9394dc4-c173-4567-ad22-f89681ece1df))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0936") (unit 1)
         )
@@ -3416,7 +3416,7 @@
     (pin "1" (uuid 5ed62d31-9abe-4308-bf2d-3bdd6f524c3f))
     (pin "2" (uuid 04977f48-ff83-4cb9-ad88-f32b418237d4))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R902") (unit 1)
         )
@@ -3451,7 +3451,7 @@
     )
     (pin "1" (uuid 8b29e113-6e39-4d64-988d-cfb46dd7dc11))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0904") (unit 1)
         )
@@ -3487,7 +3487,7 @@
     (pin "1" (uuid 124dd843-ddad-4b32-b3e1-7af808c8fab3))
     (pin "2" (uuid 68b0dbe8-4632-4721-8360-5c20d63d04d1))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R926") (unit 1)
         )
@@ -3524,7 +3524,7 @@
     (pin "2" (uuid 363b0812-c3b4-4bc1-821d-299607ea9978))
     (pin "3" (uuid 44aff4ed-4ca5-4bdf-84d7-97c2ab7b610a))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q913") (unit 1)
         )
@@ -3560,7 +3560,7 @@
     (pin "1" (uuid abfac319-679a-4581-bdf0-f4a4a477da3a))
     (pin "2" (uuid fdc4698a-191a-4ff6-8977-2bc3275d3c50))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R928") (unit 1)
         )
@@ -3596,7 +3596,7 @@
     (pin "1" (uuid 311796b4-c249-4262-86f0-8950f481c616))
     (pin "2" (uuid da0e37f5-154b-44e3-8f20-d10b8bf55ad1))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R909") (unit 1)
         )
@@ -3632,7 +3632,7 @@
     (pin "1" (uuid 5581f2f1-5309-4d7c-be8d-8d6d4ffe3ef6))
     (pin "2" (uuid 884530c3-52f8-4480-aa8d-310649ef5657))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R924") (unit 1)
         )
@@ -3669,7 +3669,7 @@
     (pin "2" (uuid 3ed3e80e-e5c1-4475-84ca-4c6bf295ae17))
     (pin "3" (uuid 54bd51be-8d91-419a-835a-5ae1c8909685))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q909") (unit 1)
         )
@@ -3704,7 +3704,7 @@
     )
     (pin "1" (uuid 3af31904-b4e6-4f4d-b1fb-2e7cc4a1535a))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0924") (unit 1)
         )
@@ -3740,7 +3740,7 @@
     (pin "1" (uuid b940b2d9-a606-4504-acbc-92fe5b6c3e7e))
     (pin "2" (uuid a4bf3733-8231-460e-90b0-5575f55b8c84))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C914") (unit 1)
         )
@@ -3776,7 +3776,7 @@
     (pin "1" (uuid 22d23b5f-6a46-4b8e-8207-afd9d8793103))
     (pin "2" (uuid 4e7200c2-1cec-48e7-9d8a-3acf8e540106))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R921") (unit 1)
         )
@@ -3811,7 +3811,7 @@
     )
     (pin "1" (uuid ca7a10e4-0fb5-4824-a966-a789a074a12d))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0915") (unit 1)
         )
@@ -3847,7 +3847,7 @@
     (pin "1" (uuid aadb0663-e589-4043-867a-9f3c00291346))
     (pin "2" (uuid 94b7e69c-ced9-42bf-98ad-3a956ce01d9a))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R942") (unit 1)
         )
@@ -3889,7 +3889,7 @@
     (pin "4" (uuid ce499001-e6aa-43a2-861e-cefd24c1c688))
     (pin "8" (uuid 6064c5db-4f97-449f-a9f3-dc5491183577))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "U901") (unit 2)
         )
@@ -3925,7 +3925,7 @@
     (pin "1" (uuid 01d80739-7c22-48e5-b7a9-a63669228e22))
     (pin "2" (uuid 0e8995e7-17c9-4c3c-9fb7-9f2102a06fd4))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C910") (unit 1)
         )
@@ -3960,7 +3960,7 @@
     )
     (pin "1" (uuid 1ac5ddca-3484-4327-a5b5-074b8325d88d))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0910") (unit 1)
         )
@@ -3997,7 +3997,7 @@
     (pin "2" (uuid e4793cb4-6c50-41aa-b4c5-46c332d84253))
     (pin "3" (uuid f3d6cf66-ea6a-42a6-9b91-9bc04563953e))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q907") (unit 1)
         )
@@ -4032,7 +4032,7 @@
     )
     (pin "1" (uuid 80d8c722-74d4-45db-a503-8fe2569ebe01))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0935") (unit 1)
         )
@@ -4068,7 +4068,7 @@
     (pin "1" (uuid a6e6e51c-7814-4214-a19c-18b4aabbcc14))
     (pin "2" (uuid 631a0e01-7134-442f-ab28-ae73e530be5d))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C919") (unit 1)
         )
@@ -4105,7 +4105,7 @@
     (pin "2" (uuid 445e8495-7d29-4c80-82ec-72e83950a83d))
     (pin "3" (uuid ce603117-f920-4b4d-bbed-145599ad7dad))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q904") (unit 1)
         )
@@ -4141,7 +4141,7 @@
     (pin "1" (uuid 445ff102-353e-401a-88d9-e834f598e026))
     (pin "2" (uuid 16810587-13e8-4bb4-a73a-e72f7e9268f9))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R944") (unit 1)
         )
@@ -4176,7 +4176,7 @@
     )
     (pin "1" (uuid 780b565f-9400-4c87-9f97-eda376abd118))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0941") (unit 1)
         )
@@ -4212,7 +4212,7 @@
     (pin "1" (uuid c5bb58a7-b197-487c-a827-8135ae7b41bf))
     (pin "2" (uuid 9c12e473-8f22-49d3-84f5-ff6b93a36672))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C911") (unit 1)
         )
@@ -4247,7 +4247,7 @@
     )
     (pin "1" (uuid f0435c42-ac85-4bbc-9fef-226f2bee8d83))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0906") (unit 1)
         )
@@ -4289,7 +4289,7 @@
     (pin "1" (uuid 89bd5bed-c67c-46f5-ad50-3a884d68d94f))
     (pin "2" (uuid 56412e29-bdb4-4c82-a52b-2e7c485e9349))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "D902") (unit 1)
         )
@@ -4325,7 +4325,7 @@
     (pin "1" (uuid e82ec19a-b585-42cc-96c4-f92b66a9484e))
     (pin "2" (uuid c0227035-d5b3-4b94-beff-0a147e4edcdb))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R939") (unit 1)
         )
@@ -4361,7 +4361,7 @@
     (pin "1" (uuid 77c95442-555c-4ebf-83c6-ed2897291d2e))
     (pin "2" (uuid 5d479092-a8d7-4af6-aa48-ed9e6687592d))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R933") (unit 1)
         )
@@ -4397,7 +4397,7 @@
     (pin "1" (uuid b25b70eb-6769-494d-9ea1-39ed8b19d2c5))
     (pin "2" (uuid de89c048-9880-4623-b325-67925534387e))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R907") (unit 1)
         )
@@ -4432,7 +4432,7 @@
     )
     (pin "1" (uuid abe2129e-866c-4d9d-9348-fce2e40a5789))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0939") (unit 1)
         )
@@ -4467,7 +4467,7 @@
     )
     (pin "1" (uuid 5ef35841-794b-4f2b-9194-9ea10c76fa42))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0925") (unit 1)
         )
@@ -4502,7 +4502,7 @@
     )
     (pin "1" (uuid f7856e73-b166-45d3-a480-fd1a270ba107))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0905") (unit 1)
         )
@@ -4539,7 +4539,7 @@
     (pin "2" (uuid a971156f-d6ad-48a3-bce8-f5f73ce25528))
     (pin "3" (uuid 080ebe04-39a0-4ff8-b05b-8d4136d489f6))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q912") (unit 1)
         )
@@ -4576,7 +4576,7 @@
     (pin "2" (uuid 12db5029-e6d3-4155-b000-74149975c6ac))
     (pin "3" (uuid 2668d401-4941-4829-8bf1-41d9b5e59ee3))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q906") (unit 1)
         )
@@ -4612,7 +4612,7 @@
     (pin "1" (uuid 10de8cde-03b6-4dd7-a055-1767a35017c4))
     (pin "2" (uuid e826962b-e41b-4abd-9618-480a9ffc7f92))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R951") (unit 1)
         )
@@ -4649,7 +4649,7 @@
     (pin "2" (uuid 20ef800f-fdae-4948-80a2-3b78a666a52e))
     (pin "3" (uuid 6d61738c-694a-4baa-abb5-3d9e151aefe2))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/18dceacf-15c5-4141-be81-d0cbda103a53"
           (reference "RV626") (unit 1)
         )
@@ -4683,7 +4683,7 @@
     (pin "1" (uuid 4e2d14db-3e40-45ac-86fb-a336137c44c3))
     (pin "2" (uuid 78dd0a92-7e06-4ab8-ba3f-7593b7fb4971))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R935") (unit 1)
         )
@@ -4718,7 +4718,7 @@
     )
     (pin "1" (uuid fa1be4d3-9012-464f-ac28-944d7dec47b9))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0917") (unit 1)
         )
@@ -4753,7 +4753,7 @@
     )
     (pin "1" (uuid d8cc49fc-fe5e-47e6-92a7-e3bac49e99fe))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0926") (unit 1)
         )
@@ -4788,7 +4788,7 @@
     )
     (pin "1" (uuid 9bbeef7c-860d-465b-9292-5d9433d9ce4b))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0923") (unit 1)
         )
@@ -4824,7 +4824,7 @@
     (pin "1" (uuid 3b4834f2-e824-4655-804e-f0cc0e12918b))
     (pin "2" (uuid bf3820fe-aec7-4aff-983e-1e58438527ab))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C901") (unit 1)
         )
@@ -4859,7 +4859,7 @@
     )
     (pin "1" (uuid 3fef6591-2126-4efd-b504-eb776f48e973))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0918") (unit 1)
         )
@@ -4895,7 +4895,7 @@
     (pin "1" (uuid 2ec50aa6-5965-4afe-abfc-0124f4f68605))
     (pin "2" (uuid 6443d307-c19f-47b4-afc1-554bf9d0ae56))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R937") (unit 1)
         )
@@ -4931,7 +4931,7 @@
     (pin "1" (uuid 29c94dbe-3324-452a-9e59-7fa5b3cb1a35))
     (pin "2" (uuid ffb822e5-bc88-4d70-a411-d1712aa087ed))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R938") (unit 1)
         )
@@ -4967,7 +4967,7 @@
     (pin "1" (uuid bae11641-73e2-41a2-a4a7-d0484d69bc5a))
     (pin "2" (uuid 1d015aaf-dc45-44b3-b670-1544145d7ebe))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R910") (unit 1)
         )
@@ -5002,7 +5002,7 @@
     )
     (pin "1" (uuid efe183d2-4853-4334-a2b3-7da55d622194))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0914") (unit 1)
         )
@@ -5037,7 +5037,7 @@
     )
     (pin "1" (uuid 07ee7037-573b-438c-960d-fdd5df784f9a))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0933") (unit 1)
         )
@@ -5073,7 +5073,7 @@
     (pin "1" (uuid fbf58e3b-045e-472c-af69-0d2a2a92c14a))
     (pin "2" (uuid 523ff160-68d0-4054-81c2-d6fad9999232))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R927") (unit 1)
         )
@@ -5110,7 +5110,7 @@
     (pin "2" (uuid ca110edb-a9bd-454a-ab0d-45887da5aac5))
     (pin "3" (uuid 587912a5-7c2e-476e-8d48-f3936c217598))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q910") (unit 1)
         )
@@ -5145,7 +5145,7 @@
     )
     (pin "1" (uuid e8df7a10-c25e-4e08-b2ad-08b3c32f01af))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0934") (unit 1)
         )
@@ -5181,7 +5181,7 @@
     (pin "1" (uuid 1527898d-70be-469f-b967-404dc9936c5c))
     (pin "2" (uuid 9c87994d-5aa9-44e0-8325-ce8ff6073625))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R912") (unit 1)
         )
@@ -5217,7 +5217,7 @@
     (pin "1" (uuid 99991f6c-4934-495d-b39b-dfd7e4bf5f79))
     (pin "2" (uuid 1f6ebf3b-25d1-4d1a-ae7f-62ea4c3093de))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R923") (unit 1)
         )
@@ -5253,7 +5253,7 @@
     (pin "1" (uuid ea7b6482-2c8e-4ee8-8bb3-3a2fff9f1df1))
     (pin "2" (uuid 1ec55ab9-5aca-46e9-86eb-ef846262945e))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R940") (unit 1)
         )
@@ -5289,7 +5289,7 @@
     (pin "1" (uuid a0a97bd4-0dee-4c3c-a56d-1304b9249c7f))
     (pin "2" (uuid b0a10234-f9db-4489-a2a7-846de61a3337))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C916") (unit 1)
         )
@@ -5331,7 +5331,7 @@
     (pin "1" (uuid cef07750-cff1-41b5-8d9a-3ec08d31d21e))
     (pin "2" (uuid 4824ac49-3be3-4324-b89b-4443c725d939))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "D903") (unit 1)
         )
@@ -5366,7 +5366,7 @@
     )
     (pin "1" (uuid 418a8306-f6b7-4df5-b1a2-20a7214709b1))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0938") (unit 1)
         )
@@ -5402,7 +5402,7 @@
     (pin "1" (uuid 6d119bea-8239-42b9-b289-ac0c427d6748))
     (pin "2" (uuid ec49e1ff-ba33-4115-b75c-bd892b70d1a5))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R931") (unit 1)
         )
@@ -5439,7 +5439,7 @@
     (pin "2" (uuid cd51aa53-c597-4438-8fbb-f54df4dc0bc1))
     (pin "3" (uuid 0eb168f6-213c-46ee-8fb8-d13c2e9a488e))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/18dceacf-15c5-4141-be81-d0cbda103a53"
           (reference "RV624") (unit 1)
         )
@@ -5474,7 +5474,7 @@
     (pin "2" (uuid 51193b05-b2f1-40ac-af09-9b63f1894d4a))
     (pin "3" (uuid 1a19e2d3-911f-4876-911d-569ff6775511))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q903") (unit 1)
         )
@@ -5510,7 +5510,7 @@
     (pin "1" (uuid 2caa124c-12cb-4de9-aeee-595a73e4b616))
     (pin "2" (uuid c9748d31-c59f-4eb2-9f72-1b88aa0d3397))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R918") (unit 1)
         )
@@ -5545,7 +5545,7 @@
     )
     (pin "1" (uuid 4dfcbd2d-4138-4886-80ae-2b90c234e2cc))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0903") (unit 1)
         )
@@ -5580,7 +5580,7 @@
     )
     (pin "1" (uuid ba23bc5d-1897-4b13-a960-2dbe14a87b28))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0940") (unit 1)
         )
@@ -5616,7 +5616,7 @@
     (pin "1" (uuid b83899ed-4c4c-42f4-b726-2ecb7d2b81f1))
     (pin "2" (uuid abf702b9-77f7-4155-92c0-9920863d838f))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C906") (unit 1)
         )
@@ -5653,7 +5653,7 @@
     (pin "2" (uuid 192c980d-59e3-4c1f-9c20-18729a023506))
     (pin "3" (uuid a0a3dc1b-b3c1-469d-a85b-123c080c8ad6))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q915") (unit 1)
         )
@@ -5689,7 +5689,7 @@
     (pin "1" (uuid 4b3e1407-a00d-4f07-bdf8-1ce2cddc163a))
     (pin "2" (uuid 0ef572c0-73fe-4ec8-9410-67107e826488))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C904") (unit 1)
         )
@@ -5725,7 +5725,7 @@
     (pin "1" (uuid e714b6fe-2d19-45c2-b2d0-4fc8282a4f63))
     (pin "2" (uuid e6979ef2-5f44-4d93-b749-b408a2a638c9))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R934") (unit 1)
         )
@@ -5761,7 +5761,7 @@
     (pin "1" (uuid 85601ef1-514a-4099-974c-7720138f9766))
     (pin "2" (uuid dddfe27c-031a-43cf-9e8c-b6dc363a115a))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C908") (unit 1)
         )
@@ -5796,7 +5796,7 @@
     )
     (pin "1" (uuid cefd07e3-2071-4dcc-8fd0-cc067bac8717))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0932") (unit 1)
         )
@@ -5832,7 +5832,7 @@
     (pin "1" (uuid 88069a1d-6f2f-49be-9a87-ab79fa2d56e8))
     (pin "2" (uuid 133c8b1a-7a44-4e52-810e-45447441dda5))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R932") (unit 1)
         )
@@ -5868,7 +5868,7 @@
     (pin "1" (uuid ed696efd-c6c7-49d8-a9a6-65ac5bac62ca))
     (pin "2" (uuid 1ef0e581-a0c5-4f05-89e0-119bd7ddf64e))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R916") (unit 1)
         )
@@ -5905,7 +5905,7 @@
     (pin "2" (uuid bc466d20-9f7f-4592-993e-33f76fbf69dd))
     (pin "3" (uuid 40c6b457-5ff1-45e2-8872-1515e9ad5564))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q916") (unit 1)
         )
@@ -5941,7 +5941,7 @@
     (pin "1" (uuid 5784328a-2dfb-426f-b6fb-66e757d03791))
     (pin "2" (uuid d08825ea-7ab3-49fd-b20b-eb51c1fc9f52))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C909") (unit 1)
         )
@@ -5983,7 +5983,7 @@
     (pin "1" (uuid e953403e-0377-4c01-839d-c89e730ab058))
     (pin "2" (uuid 2d17869c-1918-48db-9c8a-ea331b9d513c))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "D901") (unit 1)
         )
@@ -6019,7 +6019,7 @@
     (pin "1" (uuid bef4d03a-e306-4b43-b033-f97a04bd04e7))
     (pin "2" (uuid 80e05bce-df1d-4e18-9586-4b9047ee0403))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C920") (unit 1)
         )
@@ -6055,7 +6055,7 @@
     (pin "1" (uuid 4cb33ca6-5505-4a81-af88-1900bdcbef51))
     (pin "2" (uuid ffea3cb9-f6ae-404a-9e6c-65764bc660bc))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R925") (unit 1)
         )
@@ -6091,7 +6091,7 @@
     (pin "1" (uuid 85a267af-855e-46d0-bba1-897409d4fd86))
     (pin "2" (uuid 88ec674c-cabc-4951-9945-960fd86e9518))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R948") (unit 1)
         )
@@ -6127,7 +6127,7 @@
     (pin "1" (uuid d58cb5ab-21f7-432e-ab44-c8efcd2ebc93))
     (pin "2" (uuid 01041fbd-be20-4202-b31e-56a3e4e0ec0e))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R920") (unit 1)
         )
@@ -6162,7 +6162,7 @@
     )
     (pin "1" (uuid a099c499-dc3e-4765-be8c-620bf7f876b9))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0931") (unit 1)
         )
@@ -6197,7 +6197,7 @@
     )
     (pin "1" (uuid 3575091a-9796-415f-8b72-11795420282c))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0916") (unit 1)
         )
@@ -6234,7 +6234,7 @@
     (pin "2" (uuid e8ec68d4-cf1d-481b-92d3-32dedb079b38))
     (pin "3" (uuid 3ee4024a-4e5c-4f80-ace6-cb999c49758a))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q905") (unit 1)
         )
@@ -6270,7 +6270,7 @@
     (pin "1" (uuid c7a633a7-6fd6-4fe2-8883-0ead34715c41))
     (pin "2" (uuid 88601d97-9565-4ef9-8d4f-6b7cc15f7a54))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C913") (unit 1)
         )
@@ -6306,7 +6306,7 @@
     (pin "1" (uuid 50658197-211b-4746-a8d7-e2ab41275cce))
     (pin "2" (uuid 2fb00ca2-0caa-4b39-b6a3-5eba33b387ea))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C905") (unit 1)
         )
@@ -6341,7 +6341,7 @@
     )
     (pin "1" (uuid 539e0b71-80be-4046-8553-ddf3427e3c22))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0912") (unit 1)
         )
@@ -6377,7 +6377,7 @@
     (pin "1" (uuid 067e5649-ee64-4869-90b5-97f89d8c7fca))
     (pin "2" (uuid 04323bdf-9052-486c-902d-69104e17f92e))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R949") (unit 1)
         )
@@ -6412,7 +6412,7 @@
     )
     (pin "1" (uuid c386e11a-efd8-43b0-ad4f-f1cf23fbe64a))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0920") (unit 1)
         )
@@ -6454,7 +6454,7 @@
     (pin "4" (uuid d46f92ee-d1e0-4260-9e09-8e2912bce4ba))
     (pin "8" (uuid 72d00102-27e4-4483-9e74-8c148aa1e47e))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "U901") (unit 1)
         )
@@ -6490,7 +6490,7 @@
     (pin "1" (uuid 83589dfa-a1af-4fde-b901-99f958c8f8da))
     (pin "2" (uuid 925989d6-42a1-4ec1-8f59-859c354400b0))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C907") (unit 1)
         )
@@ -6526,7 +6526,7 @@
     (pin "1" (uuid e03f1218-b627-4f56-b3f8-88a6adbc09c1))
     (pin "2" (uuid ed41b3b9-d445-40e9-be48-74b6618a5bf6))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R945") (unit 1)
         )
@@ -6562,7 +6562,7 @@
     (pin "1" (uuid 3807e691-c2c1-4465-862b-87e58c5c41e1))
     (pin "2" (uuid 399568a8-3874-408f-8e4c-01ee8604a4a8))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R929") (unit 1)
         )
@@ -6598,7 +6598,7 @@
     (pin "1" (uuid 4cbd26a1-daf1-4286-bdfc-fc957ace1892))
     (pin "2" (uuid 73bbffbe-ed8f-43e2-a162-7b9f92791ba9))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "C912") (unit 1)
         )
@@ -6635,7 +6635,7 @@
     (pin "2" (uuid bf98aaa8-266d-48d1-9a3d-311b5af5a5a0))
     (pin "3" (uuid df22f862-d48c-4a5d-b10e-c09c9ab0ad8a))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "Q901") (unit 1)
         )
@@ -6671,7 +6671,7 @@
     (pin "1" (uuid ed0ac87c-5528-41f1-83b9-43f8b31578b2))
     (pin "2" (uuid 4f849cd6-eaf4-41f0-9b23-b0dda6b8224d))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R901") (unit 1)
         )
@@ -6707,7 +6707,7 @@
     (pin "1" (uuid 1fe5ed36-c159-473d-bc7e-4c3a5d8facfe))
     (pin "2" (uuid ac7fa127-4ca9-42eb-b505-3011631f42e3))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R946") (unit 1)
         )
@@ -6743,7 +6743,7 @@
     (pin "1" (uuid 09c5b78a-2e74-42bb-bbd7-46fb99b51e66))
     (pin "2" (uuid bd1647ea-b735-470b-8615-98a7cf86ef77))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R943") (unit 1)
         )
@@ -6779,7 +6779,7 @@
     (pin "1" (uuid 114ee669-67f2-4389-b8f0-aa176474e4a8))
     (pin "2" (uuid b73754bd-65f4-409a-84a8-2771d154b402))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R913") (unit 1)
         )
@@ -6815,7 +6815,7 @@
     (pin "1" (uuid 79177ed0-bcd0-4ca9-804a-419ea84e880e))
     (pin "2" (uuid 765f6144-4099-4b95-b02a-f017349f59f7))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "R947") (unit 1)
         )
@@ -6850,7 +6850,7 @@
     )
     (pin "1" (uuid 78e3bdb6-9b56-406a-aa42-6734175ec0e8))
     (instances
-      (project "ESP808_mk3_rev2"
+      (project "ESP808_mk3"
         (path "/1b0f4827-7224-4696-9105-e83073878432/6d702576-90e6-405d-b6f2-7489acbb0af2/9deee2b2-b5d3-4d11-b86b-8a59ce25a437"
           (reference "#PWR0930") (unit 1)
         )
