@@ -1,7 +1,6 @@
 #pragma once
 #include <Arduino.h>
  
-typedef unsigned char uint8;
 
 // ------- Pins on the ESP32-S3-WROOM-1 module---------------------
 
@@ -45,59 +44,60 @@ typedef unsigned char uint8;
 //first expander handles the 16 step buttons
 #define EXP_1_ADDR 0b100 
 
-#define ST0 0
-#define ST1 1
-#define ST2 2
-#define ST3 3
-#define ST4 4
-#define ST5 5
-#define ST6 6
-#define ST7 7
-#define ST8 15
-#define ST9 14
-#define ST10 13
-#define ST11 12
-#define ST12 11
-#define ST13 10
-#define ST14 9
-#define ST15 8
+#define ST0 8
+#define ST1 9
+#define ST2 10
+#define ST3 11
+#define ST4 12
+#define ST5 13
+#define ST6 14
+#define ST7 15
+
+#define ST8 7
+#define ST9 6
+#define ST10 5
+#define ST11 4
+#define ST12 3
+#define ST13 2
+#define ST14 1
+#define ST15 0
 
 // second handles the encoders and pg left/right buttons
 #define EXP_2_ADDR 0b110 
 
-#define ENC3_L 0
-#define ENC3_R 1
-#define ENC3_B 2
+#define ENC3_L 8
+#define ENC3_R 9
+#define ENC3_B 10
 
-#define ENC2_L 3
-#define ENC2_R 4
-#define ENC2_B 5
+#define ENC2_L 11
+#define ENC2_R 12
+#define ENC2_B 13
 
-#define ENC1_L 6
-#define ENC1_R 7
-#define ENC1_B 8
+#define ENC1_L 14
+#define ENC1_R 15
+#define ENC1_B 0
 
-#define ENC4_L 9
-#define ENC4_R 10
-#define ENC4_B 11
+#define ENC4_L 1
+#define ENC4_R 2
+#define ENC4_B 3
 
-#define PG_LEFT 12
-#define PG_RIGHT 13
+#define PG_LEFT 4
+#define PG_RIGHT 5
 
 // third handles the trigger outputs to the analog voices
 // and the remaining buttons
 #define EXP_3_ADDR 0b001
 
-#define K1_TRIG 0
-#define K2_TRIG 1
-#define SNARE_TRIG 2
-#define CLAP_TRIG 3
-#define CLAVE_TRIG 4
-#define OH_TRIG 5
-#define CH_TRIG 6
-#define HAT_ACCENT 7
+#define K1_TRIG 8
+#define K2_TRIG 9
+#define SNARE_TRIG 10
+#define CLAP_TRIG 11
+#define CLAVE_TRIG 12
+#define OH_TRIG 13
+#define CH_TRIG 14
+#define HAT_ACCENT 15
 
-#define LOAD_PIN 8
-#define SAVE_PIN 9
-#define PLAYTOGLE 10
-#define ALT_PIN
+#define LOAD_PIN 0
+#define SAVE_PIN 1
+#define PLAYTOGLE 2
+#define ALT_PIN 3
