@@ -88,7 +88,7 @@ void Button::fsm(bool active)
                 reset();
             }
             break;
-        case PRESS:
+        case PRESS: //-----------------
             if(!active)
                 state = BtnState::PRESSEND;
             else
@@ -101,7 +101,7 @@ void Button::fsm(bool active)
                 }
             }
             break;
-        case PRESSEND:
+        case PRESSEND: //-------------------
             if(hasOnPressStop)
                 onPressStop();
             reset();

@@ -1,6 +1,7 @@
 #pragma once
 #include "Pins.h"
 #include "RingBuffer.h"
+#include "Button.h"
 #include <Adafruit_MCP23X17.h>
 #include <functional>
 
@@ -44,6 +45,7 @@ public:
 
 #define BUTTON_CHECK_HZ 800
 
+#define NUM_BUTTONS 26
 
 enum ButtonID
 {
@@ -75,6 +77,25 @@ enum ButtonID
     Playtoggle
 };
 
+// the collective buttons
+class Buttons
+{
+private:
+    Button buttons[NUM_BUTTONS];
+public:
+    Buttons() {}
+    Button& get(ButtonID id)
+    {
+        return buttons[id];
+    }
+
+    Button& operator[](uint8_t idx)
+    {
+        return buttons[idx];
+    }
+
+    void tick(uint16_t exp1bits, uint16_t exp2bits, uint16_t exp3bits);
+};
 
 
 

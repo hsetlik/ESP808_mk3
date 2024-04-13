@@ -201,3 +201,41 @@ void Encoders::interruptSent(uint8_t pin)
         moveStarted[e] = true;
     }
 }
+
+//----------------------------------------------------------------------------
+
+void Buttons::tick(uint16_t exp1bits, uint16_t exp2bits, uint16_t exp3bits)
+{
+    // exp 1
+    buttons[ButtonID::Seq1].tick(exp1bits & (1 << ST0));
+    buttons[ButtonID::Seq2].tick(exp1bits & (1 << ST1));
+    buttons[ButtonID::Seq3].tick(exp1bits & (1 << ST2));
+    buttons[ButtonID::Seq4].tick(exp1bits & (1 << ST3));
+    buttons[ButtonID::Seq5].tick(exp1bits & (1 << ST4));
+    buttons[ButtonID::Seq6].tick(exp1bits & (1 << ST5));
+    buttons[ButtonID::Seq7].tick(exp1bits & (1 << ST6));
+    buttons[ButtonID::Seq8].tick(exp1bits & (1 << ST7));
+    buttons[ButtonID::Seq9].tick(exp1bits & (1 << ST8));
+    buttons[ButtonID::Seq10].tick(exp1bits & (1 << ST9));
+    buttons[ButtonID::Seq11].tick(exp1bits & (1 << ST10));
+    buttons[ButtonID::Seq12].tick(exp1bits & (1 << ST11));
+    buttons[ButtonID::Seq13].tick(exp1bits & (1 << ST12));
+    buttons[ButtonID::Seq14].tick(exp1bits & (1 << ST13));
+    buttons[ButtonID::Seq15].tick(exp1bits & (1 << ST14));
+    buttons[ButtonID::Seq16].tick(exp1bits & (1 << ST15));
+
+    // exp 2
+    buttons[ButtonID::Enc1].tick(exp2bits & (1 << ENC1_B));
+    buttons[ButtonID::Enc2].tick(exp2bits & (1 << ENC2_B));
+    buttons[ButtonID::Enc3].tick(exp2bits & (1 << ENC3_B));
+    buttons[ButtonID::Enc4].tick(exp2bits & (1 << ENC4_B));
+
+    buttons[ButtonID::PgLeft].tick(exp2bits & (1 << PG_LEFT));
+    buttons[ButtonID::PgRight].tick(exp2bits & (1 << PG_RIGHT));
+
+    // exp 3
+    buttons[ButtonID::Load].tick(exp3bits & (1 << LOAD_PIN));
+    buttons[ButtonID::Save].tick(exp3bits & (1 << SAVE_PIN));
+    buttons[ButtonID::Playtoggle].tick(exp3bits & (1 << PLAYTOGLE));
+    buttons[ButtonID::Alt].tick(exp3bits & (1 << ALT_PIN));
+}
