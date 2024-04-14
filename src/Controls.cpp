@@ -174,31 +174,28 @@ bool Enc::isLeftPin(uint8_t pin)
 
 Encoders::Encoders()
 {
-    for(uint8_t e = 0; e < 4; e++)
-    {
-        callbackSet[e] = false;
-        moveStarted[e] = false;
-    }
+
 }
 
 
 void Encoders::setCallback(uint8_t encoder, EncCallback cb)
 {
-    callbacks[encoder] = cb;
-    callbackSet[encoder] = true;
+    encoders[encoder].callback = cb;
+    encoders[encoder].hasCallback = true;
 }
 
 void Encoders::interruptSent(uint8_t pin)
 {
-    auto e = Enc::getEncoder(pin);
-    if(moveStarted[e])
+    auto& enc = encoders[Enc::getEncoder(pin)];
+    if(enc.moveStarted)
     {
-        callbacks[e](Enc::isLeftPin(pin));
-        moveStarted[e] = false;
+        enc.callback(Enc::isLeftPin(pin));
+        enc.lastMovedAt = millis();
+        enc.moveStarted = false;
     }
     else
     {
-        moveStarted[e] = true;
+        enc.moveStarted = true;        
     }
 }
 

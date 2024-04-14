@@ -26,19 +26,24 @@ namespace Enc
 }
 
 
+
+struct Encoder
+{
+    bool hasCallback = false;
+    EncCallback callback;
+    bool moveStarted = false;
+    unsigned long lastMovedAt = 0;
+};
+
+
 class Encoders
 {
 private:
-    bool callbackSet[4];
-    EncCallback callbacks[4];
-// keep track of encoder state
-    bool moveStarted[4];
-
+    Encoder encoders[4];
 public:
     Encoders();
     void interruptSent(uint8_t pin);
     void setCallback(uint8_t encoder, EncCallback cb);
-
 };
 
 //---------------------------------------------------------------------

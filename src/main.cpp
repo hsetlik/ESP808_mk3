@@ -1,5 +1,6 @@
 #include "Processor.h"
-
+#include "DigitalPot.h"
+#define OUTPUT_UPDATE_HZ 300
 /*
 ISRs that need to go here:
 
@@ -51,7 +52,8 @@ Processor proc;
 hw_timer_t* buttonTimer = NULL;
 //portMUX_TYPE buttonTimerMux = portMUX_INITIALIZER_UNLOCKED;
 
-// ISRs
+// ISRs --------------------------------------------------------------------
+// Button stuff
 volatile bool buttonDataReady = false;
 volatile uint16_t bits1 = 0;
 volatile uint16_t bits2 = 0;
@@ -65,6 +67,7 @@ void IRAM_ATTR buttonISR()
   buttonDataReady = true;
 }
 
+// Encoder stuff
 volatile bool encoderTriggered = false;
 volatile uint8_t lastEncoderPin = 0;
 
@@ -74,6 +77,19 @@ void IRAM_ATTR encoderISR()
   lastEncoderPin = exp2.getLastInterruptPin();
 }
 
+// Output stuff
+volatile bool newOutputNeeded = false;
+volatile uint64_t lastPotLevels = 0; // note: this is 8 8bit values packed in
+volatile uint64_t potLevels = 0; // note: this is 8 8bit values packed in
+volatile uint8_t lastGateLevels = 0;
+volatile uint8_t gateLevels = 0;
+
+
+
+
+
+
+//----------------------------------------------------------------------
 
 void setup() 
 {
@@ -134,7 +150,9 @@ void setup()
   for(uint8_t b = 0; b < NUM_BUTTONS; b++)
   {
     buttons[b].attachOnClick([b](){proc.handleClick(b);});
-    buttons[b].attachOnPressStart([b](){proc.handlePress(b);});
+    buttons[b].attachOnPressStart([b](){proc.handlePressStart(b);});
+    buttons[b].attachOnPressStop([b](){proc.handlePressEnd(b);});
+
   }
 
 
