@@ -83,3 +83,27 @@ uint64_t Pots::packAllPotLevels(uint8_t k1, uint8_t k2, uint8_t snare, uint8_t o
 }
 
 //------------------------------------------------------------------
+uint8_t Gate::bitForTrack(HardwareTrack trk)
+{
+    switch(trk)
+    {
+        case Kick1:
+            return (uint8_t)GateBit::K1;
+        case Kick2:
+            return (uint8_t)GateBit::K2;
+        case Snare:
+            return (uint8_t)GateBit::Snare;
+        case OpenHat:
+            return (uint8_t)GateBit::OH;
+        case ClosedHat:
+            return (uint8_t)GateBit::CH;
+        case Clap:
+            return (uint8_t)GateBit::Clap;
+        case Clave:
+            return (uint8_t)GateBit::Clave;
+        case Accent:
+            return (uint8_t)GateBit::Accent;
+        default:
+            return 9;
+    }
+}

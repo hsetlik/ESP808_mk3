@@ -11,6 +11,7 @@ Clap,
 Clave,
 OpenHat,
 ClosedHat,
+Accent,
 Digital
 };
 
@@ -52,8 +53,22 @@ namespace Pots
 }
 
 //----------------------------------------------------------------
+
+enum GateBit : uint8_t
+{
+    K1,
+    K2,
+    Snare,
+    Clap,
+    Clave,
+    OH,
+    CH,
+    Accent
+};
+
 namespace Gate
 {
+    uint8_t bitForTrack(HardwareTrack trk);
     
 
 }

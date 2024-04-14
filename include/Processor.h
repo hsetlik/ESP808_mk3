@@ -20,6 +20,8 @@
 
 #define MAX_TRACKS 12
 
+#define TRIGGER_DURATION_MS 15
+
 
 
 //----------------------------------------------------------------
@@ -61,6 +63,7 @@ public:
 //----------------------------------------------------------------
 
 
+//----------------------------------------------------------------
 class Processor
 {
 private:
@@ -72,7 +75,7 @@ private:
     unsigned long lastAltClickAt;
 
     // timing state
-    unsigned long lastLoopMs;
+    unsigned long lastTickMs;
 
     // control mode stuff
     bool digitalMode;
@@ -81,6 +84,7 @@ private:
     Sequence seq;
     float fCurrentStep; 
     uint8_t lastStep;
+    unsigned long lastTriggerMs[8];
 
 
     // state helpers
@@ -102,5 +106,9 @@ public:
     void handleEncoder(uint8_t enc, bool up);
     // call this in loop() in main.cpp, it updates all the logic and timing
     void tick();
+    // these get called as requested to update values for the ISRs
+    uint8_t getTriggerState();
+    uint64_t getPotLevels();
+
 };
 

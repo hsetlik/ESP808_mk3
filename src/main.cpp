@@ -90,15 +90,16 @@ void IRAM_ATTR outputISR()
   if(potLevels != lastPotLevels)
   {
     // levels have changed and we need to update
-    uint32_t data1 = (uint32_t)potLevels;
-    uint32_t data2 = (uint32_t)(potLevels >> 32);
+    uint32_t data2 = (uint32_t)potLevels;
+    uint32_t data1 = (uint32_t)(potLevels >> 32);
     MCP4331::setLevels(&SPI, POT1_CS, data1);
     MCP4331::setLevels(&SPI, POT2_CS, data2);
     lastPotLevels = potLevels;
   }
   if(gateLevels != lastGateLevels)
   {
-
+    exp3.writeGPIOB(gateLevels);
+    lastGateLevels = gateLevels;
   }
   newOutputNeeded = true;
 }
@@ -154,6 +155,9 @@ void setup()
 
   // output interrupt
   outputTimer = timerBegin(1, 80, true);
+  timerAttachInterrupt(outputTimer, &outputISR, true);
+  timerAlarmWrite(outputTimer, 1000000 / OUTPUT_UPDATE_HZ, true);
+  timerAlarmEnable(buttonTimer);
 
   // attach the encoder interrupt
   attachInterrupt(EXP_INTR, encoderISR, FALLING);
@@ -197,5 +201,13 @@ void loop()
   {
     encoders.interruptSent(lastEncoderPin);
     encoderTriggered = false;
+  }
+  proc.tick();
+
+  if(newOutputNeeded)
+  {
+    potLevels = proc.getPotLevels();
+    gateLevels = proc.getTriggerState();
+    newOutputNeeded = false;
   }
 }
