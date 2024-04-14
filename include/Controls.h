@@ -5,16 +5,15 @@
 #include <Adafruit_MCP23X17.h>
 #include <functional>
 
-using MCP23S17 = Adafruit_MCP23X17;
 
 typedef std::function<void(bool)> EncCallback;
 
 namespace Expanders
 {
     // this just helps our setup() in main.cpp be more readable
-    void setupExpander1(MCP23S17* exp);
-    void setupExpander2(MCP23S17* exp);
-    void setupExpander3(MCP23S17* exp);
+    void setupExpander1(Adafruit_MCP23X17* exp);
+    void setupExpander2(Adafruit_MCP23X17* exp);
+    void setupExpander3(Adafruit_MCP23X17* exp);
 }
 
 //---------------------------------------------------------------------

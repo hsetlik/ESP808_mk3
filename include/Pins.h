@@ -9,7 +9,7 @@
 #define MOSI 11
 #define SCK 12
 
-#define EXP_CS 13 // MCP23S17 port expander (x3)
+#define EXP_CS 13 // Adafruit_MCP23X17 port expander (x3)
 #define SD_CS 21 // SD card reader
 #define DISPLAY_CS 35 // ILI9341-driven display
 #define POT1_CS 42 // MCP4331 quad digital potentiometer (x2)
@@ -39,7 +39,7 @@
 // ADC pin for monitoring the battery level
 #define BATT_PIN 1
 
-// ------- Pins on the three MCP23S17 expanders--------------------
+// ------- Pins on the three Adafruit_MCP23X17 expanders--------------------
 
 //first expander handles the 16 step buttons
 #define EXP_1_ADDR 0b100 

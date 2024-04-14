@@ -1,11 +1,13 @@
 #pragma once
 #include "Controls.h"
 #include "Display.h"
+#include "Outputs.h"
+#include <Audio.h>
 
 // definitions for param mins and maxes
 #define TEMPO_MIN 30.0f
 #define TEMPO_DEFAULT 120.0f
-#define TEMPO_INCREMENT 3.0f
+#define TEMPO_INCREMENT 1.0f
 #define TEMPO_MAX 400.0f
 
 #define LEVEL_MAX 127
@@ -19,17 +21,6 @@
 #define MAX_TRACKS 12
 
 
-enum HardwareTrack : uint8_t
-{
-Kick1,
-Kick2,
-Snare,
-Clap,
-Clave,
-OpenHat,
-ClosedHat,
-Digital
-};
 
 //----------------------------------------------------------------
 struct Step
@@ -40,6 +31,11 @@ struct Step
     bool operator==(Step& other)
     {
         return (on == other.on) && (level == other.level);
+    }
+    void operator=(Step& other)
+    {
+        on = other.on;
+        level = other.level;
     }
 };
 
@@ -71,24 +67,30 @@ private:
     // state variables
     bool isPlaying;
     float currentTempo;
-    HardwareTrack selectedTrack;
+    uint8_t selectedTrack;
     bool altDown;
     unsigned long lastAltClickAt;
+
+    // timing state
+    unsigned long lastLoopMs;
+
+    // control mode stuff
+    bool digitalMode;
+
+    // Pattern data
     Sequence seq;
-    // our playhead in the sequence. 
-    // Represented as a float for reasons that will
-    // make sense in the .cpp file
-    float currentStep; 
+    float fCurrentStep; 
+    uint8_t lastStep;
 
 
     // state helpers
 
     bool altKey() { return altDown || (millis() - lastAltClickAt) < 50; }
     void nudgeTempo(bool up);
-
+    void nudgeSelectedTrack(bool up);
     // timing helpers
-
-    
+    // how many ms should a step last before advancing?
+    unsigned long stepDurationMs();
 
 
 public:
@@ -98,5 +100,7 @@ public:
     void handlePressStart(uint8_t button);
     void handlePressEnd(uint8_t button);
     void handleEncoder(uint8_t enc, bool up);
+    // call this in loop() in main.cpp, it updates all the logic and timing
+    void tick();
 };
 

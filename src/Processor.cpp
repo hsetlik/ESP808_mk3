@@ -3,10 +3,13 @@
 Processor::Processor() :
 isPlaying(false),
 currentTempo(TEMPO_DEFAULT),
+selectedTrack(0),
 altDown(false),
 lastAltClickAt(0),
+lastLoopMs(0),
 seq(NUM_HARDWARE_TRACKS),
-currentStep(0.0f)
+fCurrentStep(0.0f),
+lastStep(0)
 {
 }
 
@@ -213,6 +216,19 @@ void Processor::handlePressEnd(uint8_t button)
 
 void Processor::handleEncoder(uint8_t enc, bool up)
 {
+   switch(enc)
+   {
+      case 0:
+         break;
+      case 1:
+         break;
+      case 2:
+         break;
+      case 3:
+         break;
+      default:
+         break;
+   }
 }
 
 void Processor::nudgeTempo(bool dir)
@@ -223,4 +239,24 @@ void Processor::nudgeTempo(bool dir)
         currentTempo = std::max<float>(currentTempo - TEMPO_INCREMENT, TEMPO_MIN);
 }
 
+void Processor::nudgeSelectedTrack(bool up)
+{
+   if(up)
+      selectedTrack = (selectedTrack + 1) % NUM_HARDWARE_TRACKS;
+   else
+      selectedTrack = (selectedTrack == 0) ? NUM_HARDWARE_TRACKS : selectedTrack - 1;
+}
+
+//-Timing -----------------------------------------------------
+
+unsigned long Processor::stepDurationMs()
+{
+   unsigned long quarterNoteMs = 60000 / (unsigned long)currentTempo;
+   return quarterNoteMs / 2;
+}
+
 //------------------------------------------------------
+void Processor::tick()
+{
+
+}

@@ -2,7 +2,7 @@
 
 //----------------------------------------------------------------------------
 
-void Expanders::setupExpander1(MCP23S17* exp)
+void Expanders::setupExpander1(Adafruit_MCP23X17* exp)
 {
     if(!exp->begin_SPI(EXP_CS, &SPI, EXP_1_ADDR))
     {
@@ -27,7 +27,7 @@ void Expanders::setupExpander1(MCP23S17* exp)
     exp->pinMode(15, INPUT_PULLUP);
 }
 
-void Expanders::setupExpander2(MCP23S17* exp)
+void Expanders::setupExpander2(Adafruit_MCP23X17* exp)
 {
     if(!exp->begin_SPI(EXP_CS, &SPI, EXP_2_ADDR))
     {
@@ -67,7 +67,7 @@ void Expanders::setupExpander2(MCP23S17* exp)
 
 }
 
-void Expanders::setupExpander3(MCP23S17* exp)
+void Expanders::setupExpander3(Adafruit_MCP23X17* exp)
 {
     if(!exp->begin_SPI(EXP_CS, &SPI, EXP_3_ADDR))
     {

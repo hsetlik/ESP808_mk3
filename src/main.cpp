@@ -1,5 +1,5 @@
 #include "Processor.h"
-#include "DigitalPot.h"
+#include "Outputs.h"
 #define OUTPUT_UPDATE_HZ 300
 /*
 ISRs that need to go here:
@@ -34,9 +34,9 @@ ISRs that need to go here:
 //----------------------------------------------------------------
 
 // SPI port expanders
-MCP23S17 exp1;
-MCP23S17 exp2;
-MCP23S17 exp3;
+Adafruit_MCP23X17 exp1;
+Adafruit_MCP23X17 expander2;
+Adafruit_MCP23X17 exp3;
 
 // Display
 ILI9341* display = nullptr;
@@ -50,6 +50,7 @@ Processor proc;
 
 // Timer stuff
 hw_timer_t* buttonTimer = NULL;
+hw_timer_t* outputTimer = NULL;
 //portMUX_TYPE buttonTimerMux = portMUX_INITIALIZER_UNLOCKED;
 
 // ISRs --------------------------------------------------------------------
@@ -62,7 +63,7 @@ volatile uint16_t bits3 = 0;
 void IRAM_ATTR buttonISR()
 {
   bits1 = exp1.readGPIOAB();
-  bits2 = exp2.readGPIOAB();
+  bits2 = expander2.readGPIOAB();
   bits3 = exp3.readGPIOAB();
   buttonDataReady = true;
 }
@@ -74,20 +75,33 @@ volatile uint8_t lastEncoderPin = 0;
 void IRAM_ATTR encoderISR()
 {
   encoderTriggered = true;
-  lastEncoderPin = exp2.getLastInterruptPin();
+  lastEncoderPin = expander2.getLastInterruptPin();
 }
 
 // Output stuff
 volatile bool newOutputNeeded = false;
 volatile uint64_t lastPotLevels = 0; // note: this is 8 8bit values packed in
-volatile uint64_t potLevels = 0; // note: this is 8 8bit values packed in
+volatile uint64_t potLevels = 0; 
 volatile uint8_t lastGateLevels = 0;
 volatile uint8_t gateLevels = 0;
 
+void IRAM_ATTR outputISR()
+{
+  if(potLevels != lastPotLevels)
+  {
+    // levels have changed and we need to update
+    uint32_t data1 = (uint32_t)potLevels;
+    uint32_t data2 = (uint32_t)(potLevels >> 32);
+    MCP4331::setLevels(&SPI, POT1_CS, data1);
+    MCP4331::setLevels(&SPI, POT2_CS, data2);
+    lastPotLevels = potLevels;
+  }
+  if(gateLevels != lastGateLevels)
+  {
 
-
-
-
+  }
+  newOutputNeeded = true;
+}
 
 //----------------------------------------------------------------------
 
@@ -123,7 +137,7 @@ void setup()
 
   // initialize expanders
   Expanders::setupExpander1(&exp1);
-  Expanders::setupExpander2(&exp2);
+  Expanders::setupExpander2(&expander2);
   Expanders::setupExpander3(&exp3);
 
   //initialize the display
@@ -131,10 +145,15 @@ void setup()
   display->begin();
 
   // initialize the timers
+
+  // button interrupt
   buttonTimer = timerBegin(0, 80, true);
   timerAttachInterrupt(buttonTimer, &buttonISR, true);
   timerAlarmWrite(buttonTimer, 1000000 / BUTTON_CHECK_HZ, true);
   timerAlarmEnable(buttonTimer);
+
+  // output interrupt
+  outputTimer = timerBegin(1, 80, true);
 
   // attach the encoder interrupt
   attachInterrupt(EXP_INTR, encoderISR, FALLING);
@@ -154,7 +173,6 @@ void setup()
     buttons[b].attachOnPressStop([b](){proc.handlePressEnd(b);});
 
   }
-
 
   /*
   SETUP NEEDS: 
