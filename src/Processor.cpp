@@ -13,6 +13,39 @@ Processor::Processor() : isPlaying(false),
                          fCurrentStep(0.0f),
                          lastStep(0)
 {
+   // initialize our track color references here
+   const uint8_t hueOffset = 16;
+   const uint8_t dHue = 256 / NUM_HARDWARE_TRACKS;
+
+   // sat and val levels
+   const uint8_t satDim = 100;
+   const uint8_t satMid = 175;
+   const uint8_t satBright = 250;
+
+   const uint8_t valDim = 80;
+   const uint8_t valMid = 180;
+   const uint8_t valBright = 250;
+
+   for (uint8_t trk = 0; trk < NUM_HARDWARE_TRACKS; trk++)
+   {
+      uint8_t hue = hueOffset + (dHue * trk);
+
+      CHSV hsvDim(hue, satDim, valDim);
+      CHSV hsvMid(hue, satMid, valMid);
+      CHSV hsvBright(hue, satBright, valBright);
+
+      // convert to RGB in our stored colors
+      hsv2rgb_rainbow(hsvDim, trackColorsDim[trk]);
+      hsv2rgb_rainbow(hsvMid, trackColorsMid[trk]);
+      hsv2rgb_rainbow(hsvBright, trackColorsBright[trk]);
+   }
+
+   // pick an off color
+   CHSV hsvOff(10, 10, 10);
+   hsv2rgb_rainbow(hsvOff, offColor);
+   // cursor color
+   CHSV hsvCursor(35, 110, 110);
+   hsv2rgb_rainbow(hsvCursor, cursorColor);
 }
 
 //--- Control Handling ---------------------------------
@@ -282,7 +315,7 @@ void Processor::handleEncoder(uint8_t enc, bool up)
 
       break;
    case 3: // NORMAL MODE: adjust the tempo
-      if(!digitalMode)
+      if (!digitalMode)
          nudgeTempo(up);
       // TODO: else adjust the digital track level
       break;
@@ -415,7 +448,7 @@ uint64_t Processor::getPotLevels()
    uint32_t p2 = Pots::packPot2Levels(seq.tracks[HardwareTrack::Clap].steps[lastStep].level,
                                       seq.tracks[HardwareTrack::ClosedHat].steps[lastStep].level,
                                       seq.tracks[HardwareTrack::Clave].steps[lastStep].level);
-   return (uint64_t)(p2) | ((uint64_t)(p1 << 32));
+   return (uint64_t)(p2) | ((uint64_t)p1 << 32);
 }
 //------------------------------------------------------
 
@@ -423,6 +456,114 @@ void Processor::updateDisplay(ILI9341 *display)
 {
 }
 
-void Processor::updatePixels()
+void Processor::updatePixels(CRGB *pixels)
 {
+   for(uint8_t p = 0; p < NUM_PIXELS; p++)
+   {
+      auto color = getPixelColor(p);
+      uint8_t idx = Pixels::pixelIndex(p);
+      pixels[idx] = color;
+   }
+}
+
+CRGB Processor::getStepPixelColor(uint8_t button, uint8_t track)
+{
+   uint8_t step = stepIdxForButton(button);
+   bool currentStep = step == lastStep;
+   if (!seq.tracks[track].steps[step].on)
+   {
+      if(currentStep)
+         return cursorColor;
+      return offColor;
+   }
+   CRGB &maxColor = currentStep ? trackColorsBright[track] : trackColorsMid[track];
+   CRGB &minColor = currentStep ? trackColorsMid[track] : trackColorsDim[track];
+   uint8_t frac = seq.tracks[track].steps[step].level * 2;
+   return blend(minColor, maxColor, (fract8)frac);
+}
+
+
+CRGB Processor::getTrackPixelColor(uint8_t track)
+{
+   if(track == selectedTrack)
+      return trackColorsBright[track];
+   
+   if(seq.tracks[track].steps[lastStep].on && track != HardwareTrack::Accent)
+      return trackColorsMid[track];
+   return offColor;
+}
+
+CRGB Processor::getPagePixelColor(uint8_t pg)
+{
+   if(pageMode)
+      return cursorColor;
+   if(lastStep / 16 == pg)
+      return cursorColor;
+   return offColor;
+}
+
+CRGB Processor::getPixelColor(uint8_t pixel)
+{
+   PixelID id = (PixelID)pixel;
+   switch(id)
+   {
+      case PixelID::S1:
+         return getStepPixelColor(0, selectedTrack);
+      case PixelID::S2:
+         return getStepPixelColor(1, selectedTrack);
+      case PixelID::S3:
+         return getStepPixelColor(2, selectedTrack);
+      case PixelID::S4:
+         return getStepPixelColor(3, selectedTrack);
+      case PixelID::S5:
+         return getStepPixelColor(4, selectedTrack);
+      case PixelID::S6:
+         return getStepPixelColor(5, selectedTrack);
+      case PixelID::S7:
+         return getStepPixelColor(6, selectedTrack);
+      case PixelID::S8:
+         return getStepPixelColor(7, selectedTrack);
+      case PixelID::S9:
+         return getStepPixelColor(8, selectedTrack);
+      case PixelID::S10:
+         return getStepPixelColor(9, selectedTrack);
+      case PixelID::S11:
+         return getStepPixelColor(10, selectedTrack);
+      case PixelID::S12:
+         return getStepPixelColor(11, selectedTrack);
+      case PixelID::S13:
+         return getStepPixelColor(12, selectedTrack);
+      case PixelID::S14:
+         return getStepPixelColor(13, selectedTrack);
+      case PixelID::S15:
+         return getStepPixelColor(14, selectedTrack);
+      case PixelID::S16:
+         return getStepPixelColor(15, selectedTrack);
+      case PixelID::TR1:
+         return getTrackPixelColor(HardwareTrack::Kick1);
+      case PixelID::TR2:
+         return getTrackPixelColor(HardwareTrack::Kick2);
+      case PixelID::TR3:
+         return getTrackPixelColor(HardwareTrack::Snare);
+      case PixelID::TR4:
+         return getTrackPixelColor(HardwareTrack::ClosedHat);
+      case PixelID::TR5:
+         return getTrackPixelColor(HardwareTrack::OpenHat);
+      case PixelID::TR6:
+         return getTrackPixelColor(HardwareTrack::Clap);
+      case PixelID::TR7:
+         return getTrackPixelColor(HardwareTrack::Clave);
+      case PixelID::TR8:
+         return getTrackPixelColor(HardwareTrack::Digital);
+      case PixelID::PG1:
+         return getPagePixelColor(0);
+      case PixelID::PG2:
+         return getPagePixelColor(1);
+      case PixelID::PG3:
+         return getPagePixelColor(2);
+      case PixelID::PG4:
+         return getPagePixelColor(3);
+      default:
+         return offColor;
+   }
 }

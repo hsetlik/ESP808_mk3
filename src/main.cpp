@@ -24,7 +24,7 @@ ISRs that need to go here:
   - Run this at 44.1 kHZ and use it to measure time as well
 
 5. Faux interrupt to update the display and NeoPixels
-  - Update the ILI9341 display and the 28 NeoPixel LEDs
+  - Update the ILI9341 display and the NUM_PIXELS NeoPixel LEDs
   - 24fps probably fine
 
 */
@@ -40,6 +40,9 @@ Adafruit_MCP23X17 exp3;
 
 // Display
 ILI9341* display = nullptr;
+
+// Neopixels
+CRGB pixels[NUM_PIXELS];
 
 // Control state stuff
 Encoders encoders;
@@ -145,6 +148,9 @@ void setup()
   display = new ILI9341(&SPI, DISPLAY_DC, DISPLAY_RST);
   display->begin();
 
+  // set up the neopixels
+  FastLED.addLeds<NEOPIXEL, PIXELS>(pixels, NUM_PIXELS);
+
   // initialize the timers
 
   // button interrupt
@@ -157,7 +163,7 @@ void setup()
   outputTimer = timerBegin(1, 80, true);
   timerAttachInterrupt(outputTimer, &outputISR, true);
   timerAlarmWrite(outputTimer, 1000000 / OUTPUT_UPDATE_HZ, true);
-  timerAlarmEnable(buttonTimer);
+  timerAlarmEnable(outputTimer);
 
   // attach the encoder interrupt
   attachInterrupt(EXP_INTR, encoderISR, FALLING);

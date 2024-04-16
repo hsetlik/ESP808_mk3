@@ -2,6 +2,21 @@
 #include <Arduino.h>
  
 
+enum HardwareTrack : uint8_t
+{
+Kick1,
+Kick2,
+Snare,
+Clap,
+Clave,
+OpenHat,
+ClosedHat,
+Accent,
+Digital
+};
+
+
+
 // ------- Pins on the ESP32-S3-WROOM-1 module---------------------
 
 // SPI  common lines and chip select lines

@@ -92,8 +92,25 @@ private:
     uint8_t lastStep;
     unsigned long lastTriggerMs[8];
 
+    // Color references for pixels
+    CRGB trackColorsDim[NUM_HARDWARE_TRACKS];
+    CRGB trackColorsMid[NUM_HARDWARE_TRACKS];
+    CRGB trackColorsBright[NUM_HARDWARE_TRACKS];
+
+    CRGB offColor;
+    CRGB cursorColor;
+
+    // pixel helpers
+    CRGB getStepPixelColor(uint8_t button, uint8_t track);
+    CRGB getTrackPixelColor(uint8_t track);
+    CRGB getPagePixelColor(uint8_t pg);
+    CRGB getPixelColor(uint8_t pixel);
+
+
+
+
     // state helpers
-    bool altKey() { return altDown || (millis() - lastAltClickAt) < 50; }
+    bool altKey() { return altDown || (millis() - lastAltClickAt) < 80; }
     void nudgeTempo(bool up);
     void nudgeSelectedTrack(bool up);
     void nudgeStepLevel(uint8_t button, bool up);
@@ -123,7 +140,7 @@ public:
     uint64_t getPotLevels();
     // these get called however often to update the screen and neopixels
     void updateDisplay(ILI9341* display);
-    void updatePixels();
+    void updatePixels(CRGB* pixels);
 
 };
 

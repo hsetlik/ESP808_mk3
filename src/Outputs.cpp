@@ -92,17 +92,17 @@ uint8_t Gate::bitForTrack(HardwareTrack trk)
         case Kick2:
             return (uint8_t)GateBit::K2;
         case Snare:
-            return (uint8_t)GateBit::Snare;
+            return (uint8_t)GateBit::SN;
         case OpenHat:
             return (uint8_t)GateBit::OH;
         case ClosedHat:
             return (uint8_t)GateBit::CH;
         case Clap:
-            return (uint8_t)GateBit::Clap;
+            return (uint8_t)GateBit::CL;
         case Clave:
-            return (uint8_t)GateBit::Clave;
+            return (uint8_t)GateBit::CV;
         case Accent:
-            return (uint8_t)GateBit::Accent;
+            return (uint8_t)GateBit::AC;
         default:
             return 9;
     }

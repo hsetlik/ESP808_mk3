@@ -1,20 +1,7 @@
 #pragma once
 #include <Arduino.h>
+#include "Pins.h"
 #include <Adafruit_MCP23X17.h>
-
-enum HardwareTrack : uint8_t
-{
-Kick1,
-Kick2,
-Snare,
-Clap,
-Clave,
-OpenHat,
-ClosedHat,
-Accent,
-Digital
-};
-
 // functions to write to out MCP4331 pots
 namespace MCP4331
 {
@@ -57,12 +44,12 @@ enum GateBit : uint8_t
 {
     K1,
     K2,
-    Snare,
-    Clap,
-    Clave,
+    SN,
+    CL,
+    CV,
     OH,
     CH,
-    Accent
+    AC
 };
 
 namespace Gate
