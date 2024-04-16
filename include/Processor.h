@@ -3,11 +3,13 @@
 #include "Display.h"
 #include "Outputs.h"
 #include <Audio.h>
+#include <FastLED.h>
 
 // definitions for param mins and maxes
 #define TEMPO_MIN 30.0f
 #define TEMPO_DEFAULT 120.0f
-#define TEMPO_INCREMENT 1.0f
+#define TEMPO_INCREMENT_BIG 2.0f
+#define TEMPO_INCREMENT_SMALL 0.1f
 #define TEMPO_MAX 400.0f
 
 #define LEVEL_MAX 127
@@ -21,6 +23,8 @@
 #define MAX_TRACKS 12
 
 #define TRIGGER_DURATION_MS 15
+
+#define NUM_LEDS 28
 
 
 
@@ -73,12 +77,14 @@ private:
     uint8_t selectedTrack;
     bool altDown;
     unsigned long lastAltClickAt;
+    uint16_t buttonHoldState;
 
     // timing state
     unsigned long lastTickMs;
 
     // control mode stuff
     bool digitalMode;
+    bool pageMode;
 
     // Pattern data
     Sequence seq;
@@ -86,16 +92,22 @@ private:
     uint8_t lastStep;
     unsigned long lastTriggerMs[8];
 
-
     // state helpers
-
     bool altKey() { return altDown || (millis() - lastAltClickAt) < 50; }
     void nudgeTempo(bool up);
     void nudgeSelectedTrack(bool up);
+    void nudgeStepLevel(uint8_t button, bool up);
+    void handleSequenceKeyClick(uint8_t button);
+    // get a pointer to the step state that a given button currently refers to
+    uint8_t stepIdxForButton(uint8_t button);
+    Step* stepForButton(uint8_t b);
+    
+    // sequence button helpers
+    bool sequenceKeyHeld() {return buttonHoldState != 0; }
+    uint8_t getHeldSequenceKey();
     // timing helpers
-    // how many ms should a step last before advancing?
+    // how many ms should a step last before advancing
     unsigned long stepDurationMs();
-
 
 public:
     Processor();
@@ -109,6 +121,9 @@ public:
     // these get called as requested to update values for the ISRs
     uint8_t getTriggerState();
     uint64_t getPotLevels();
+    // these get called however often to update the screen and neopixels
+    void updateDisplay(ILI9341* display);
+    void updatePixels();
 
 };
 

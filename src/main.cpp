@@ -190,7 +190,10 @@ void setup()
 
 void loop() 
 {
-  // put your main code here, to run repeatedly:
+  // 1. advance the processor
+  proc.tick();
+  
+  // 2. Do any chores for the next round of interrupts as needed
   if(buttonDataReady)
   {
     buttons.tick(bits1, bits2, bits3);
@@ -202,7 +205,6 @@ void loop()
     encoders.interruptSent(lastEncoderPin);
     encoderTriggered = false;
   }
-  proc.tick();
 
   if(newOutputNeeded)
   {

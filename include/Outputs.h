@@ -53,7 +53,6 @@ namespace Pots
 }
 
 //----------------------------------------------------------------
-
 enum GateBit : uint8_t
 {
     K1,
@@ -69,6 +68,7 @@ enum GateBit : uint8_t
 namespace Gate
 {
     uint8_t bitForTrack(HardwareTrack trk);
-    
-
 }
+
+
+//----------------------------------------------------------------
