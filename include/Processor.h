@@ -91,7 +91,7 @@ private:
 
     // timing state
     unsigned long lastTickMs;
-
+    uint16_t currentFrameRate;
     // control mode stuff
     bool digitalMode;
     bool pageMode;
@@ -116,11 +116,15 @@ private:
     CRGB getPagePixelColor(uint8_t pg);
     CRGB getPixelColor(uint8_t pixel);
 
-    // display stuff
+    // display data
     RingBuffer<String, LOG_LENGTH> msgLog;
     const uint16_t bkgndColor;
     const uint16_t textColor;
 
+    // display helpers
+    void drawMsgLog(ILI9341* display);
+    void drawBatteryLevel(ILI9341* display);
+    void drawModeLabel(ILI9341* display);
 
 
 
@@ -164,6 +168,7 @@ public:
     // call this maybe once a minute to update the battery level
     void checkBatteryLevel();
 
+    void updateFrameRate(uint16_t fps) { currentFrameRate = fps; }
 
 };
 

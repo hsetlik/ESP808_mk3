@@ -189,6 +189,20 @@ void setup()
 unsigned long lastUpdateMs = 0;
 unsigned long lastBatteryCheckMs = 0;
 unsigned long now = 0;
+RingBuffer<unsigned long, 25> frameTimes;
+uint16_t frameCounter = 0;
+
+uint16_t getFrameRate()
+{
+  unsigned long sum = 0;
+  for(uint8_t i = 1; i < 25; i++)
+  {
+    sum += (frameTimes[i] - frameTimes[i - 1]);
+  }
+  uint16_t averageMs = (uint16_t)(sum / 24);
+  return 1000 / averageMs;
+}
+
 
 void loop() 
 {
@@ -221,6 +235,13 @@ void loop()
     FastLED.show();
     proc.updateDisplay(display);
     lastUpdateMs = now;
+    frameTimes.push(now);
+    frameCounter++;
+    if(frameCounter >= 200)
+    {
+      frameCounter = 0;
+      proc.updateFrameRate(getFrameRate());
+    }
   }
 
   // 4. update the battery if needed

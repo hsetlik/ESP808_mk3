@@ -9,6 +9,7 @@ Processor::Processor() : isPlaying(false),
                          battLevelMv(BATT_MAX_MV),
                          battPercentage(100),
                          lastTickMs(0),
+                         currentFrameRate(24),
                          digitalMode(false),
                          pageMode(false),
                          seq(NUM_HARDWARE_TRACKS),
@@ -463,6 +464,14 @@ void Processor::updateDisplay(ILI9341 *display)
 {
    display->fillScreen(bkgndColor);
    display->setTextColor(textColor);
+   drawMsgLog(display);
+   drawBatteryLevel(display);
+   drawModeLabel(display);
+
+}
+
+void Processor::drawMsgLog(ILI9341 *display)
+{
    display->setTextSize(1);
    // 1. Draw the debug log stuff
    uint16_t cursorY = DISPLAY_H - 8;
@@ -474,6 +483,45 @@ void Processor::updateDisplay(ILI9341 *display)
    }
 }
 
+void Processor::drawBatteryLevel(ILI9341 *display)
+{
+   const int16_t textX = DISPLAY_W - 60;
+   const int16_t symbolX = DISPLAY_W - 35;
+   String text = String(battPercentage) + "\%";
+   // draw the text
+   display->setCursor(textX, 0);
+   display->print(text);
+   
+   // draw the symbol
+   const int16_t symbolW = 30;
+   const int8_t symbolH = 10;
+   display->drawRect(symbolX, 0, symbolW, symbolH, textColor);
+   int16_t fillW = (symbolW * battPercentage) / 100;
+   display->fillRect(symbolX, 0, fillW, symbolH, textColor);
+}
+
+
+void Processor::drawModeLabel(ILI9341* display)
+{
+   const int16_t x = 0;
+   const uint16_t y = 0;
+   const uint16_t w = 60;
+   const uint16_t h = 10;
+   if(digitalMode)
+   {
+      display->fillRect(x, y, w, h, textColor);
+      display->setTextColor(bkgndColor);
+      display->setCursor(x, y);
+      display->print("DIGITAL MODE");
+      display->setTextColor(textColor);
+   }
+   else
+   {
+      display->drawRect(x, y, w, h, textColor);
+      display->setCursor(x, y);
+      display->print("SEQUENCE MODE");
+   }
+}
 //------------------------------------------------------
 
 void Processor::updatePixels(CRGB *pixels)
@@ -586,6 +634,8 @@ CRGB Processor::getPixelColor(uint8_t pixel)
       return offColor;
    }
 }
+
+//----------------------------------------------------------
 
 void Processor::checkBatteryLevel()
 {
