@@ -15,6 +15,18 @@ Accent,
 Digital
 };
 
+const String TrackNames[9] = {
+    "Kick 1",
+    "Kick 2",
+    "Snare",
+    "Clap",
+    "Clave",
+    "Open Hat",
+    "Closed Hat",
+    "Accent",
+    "Digital"
+};
+
 
 
 // ------- Pins on the ESP32-S3-WROOM-1 module---------------------

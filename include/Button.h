@@ -18,12 +18,12 @@ namespace Btn
 
 enum BtnState : int
 {
-    INIT = 0,
-    DOWN = 1,
-    UP = 2,
-    COUNT = 3,
-    PRESS = 6,
-    PRESSEND = 7
+    INIT,
+    DOWN,
+    UP,
+    COUNT,
+    PRESS,
+    PRESSEND
 };
 
 class Button

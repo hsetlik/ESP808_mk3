@@ -1,6 +1,11 @@
 #include "Processor.h"
 #include "Outputs.h"
 #define OUTPUT_UPDATE_HZ 300
+
+#define DISPLAY_UPDATE_HZ 24
+
+//check the battery level every 30 seconds
+#define BATT_CHECK_INTERVAL 30000
 /*
 ISRs that need to go here:
 
@@ -15,15 +20,8 @@ ISRs that need to go here:
 3. Timer interrupt to update the gates and digital pots
   - Set the correct level for each of the 8 gate lines on Expander 3
   - Set both quad digital potentiometers to the correct value
-  - 
 
-4. Timer interrupt to update the audio DAC:
-  - Send the next sample in the current buffer
-    to the DAC (TI PCM5100A as of last board rev)
-    over I2S
-  - Run this at 44.1 kHZ and use it to measure time as well
-
-5. Faux interrupt to update the display and NeoPixels
+4. Faux interrupt to update the display and NeoPixels
   - Update the ILI9341 display and the NUM_PIXELS NeoPixel LEDs
   - 24fps probably fine
 
@@ -83,7 +81,7 @@ void IRAM_ATTR encoderISR()
 
 // Output stuff
 volatile bool newOutputNeeded = false;
-volatile uint64_t lastPotLevels = 0; // note: this is 8 8bit values packed in
+volatile uint64_t lastPotLevels = 0; // note: this is 7 8bit values packed in
 volatile uint64_t potLevels = 0; 
 volatile uint8_t lastGateLevels = 0;
 volatile uint8_t gateLevels = 0;
@@ -184,21 +182,18 @@ void setup()
 
   }
 
-  /*
-  SETUP NEEDS: 
-  1. initialize pin modes
-  2. initialize SPI
-  3. Initialize variables for peripherals (expanders, digital pots, NeoPixels, etc)
-  4. Attach interrupts (see above)
-  5. Wire function pointers from controls to processor object
-  */
+  // check our battery level at startup
+  proc.checkBatteryLevel();
 }
+
+unsigned long lastUpdateMs = 0;
+unsigned long lastBatteryCheckMs = 0;
+unsigned long now = 0;
 
 void loop() 
 {
   // 1. advance the processor
   proc.tick();
-  
   // 2. Do any chores for the next round of interrupts as needed
   if(buttonDataReady)
   {
@@ -217,5 +212,21 @@ void loop()
     potLevels = proc.getPotLevels();
     gateLevels = proc.getTriggerState();
     newOutputNeeded = false;
+  }
+  // 3. check if we need to update our pixels & display
+  now = millis();
+  if(now - lastUpdateMs > (1000 / DISPLAY_UPDATE_HZ))
+  {
+    proc.updatePixels(pixels);
+    FastLED.show();
+    proc.updateDisplay(display);
+    lastUpdateMs = now;
+  }
+
+  // 4. update the battery if needed
+  if(now - lastBatteryCheckMs > BATT_CHECK_INTERVAL)
+  {
+    proc.checkBatteryLevel();
+    lastBatteryCheckMs = now;
   }
 }

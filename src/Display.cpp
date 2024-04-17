@@ -1,5 +1,17 @@
 #include "Display.h"
 
+
+
+uint16_t Display::to565(uint8_t r, uint8_t g, uint8_t b)
+{
+    uint16_t red = (uint16_t)(((float)r / 255.0f) * 31.0f);
+    uint16_t green = (uint16_t)(((float)g / 255.0f) * 63.0f);
+    uint16_t blue = (uint16_t)(((float)b / 255.0f) * 31.0f);
+    return (red << 11) | (green << 5) | blue; 
+}
+
+//-----------------------------------------------------
+
 uint8_t Pixels::pixelIndex(PixelID id)
 {
     switch (id)

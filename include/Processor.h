@@ -26,6 +26,16 @@
 
 #define NUM_LEDS 28
 
+#define LOG_LENGTH 6
+
+#define BATT_MAX_MV 3082
+/*
+    The min battery voltage for the TPS61200 boost converter
+    is 300mV, but we'll call 0% 400mV to be safe, which equates
+    to 300mV once again on the other side of the R511/R512 
+    voltage divider (See pg 5 of the schematic).
+*/
+#define BATT_MIN_MV 300
 
 
 //----------------------------------------------------------------
@@ -62,8 +72,6 @@ public:
     }
 };
 
-
-
 //----------------------------------------------------------------
 
 
@@ -78,6 +86,8 @@ private:
     bool altDown;
     unsigned long lastAltClickAt;
     uint16_t buttonHoldState;
+    uint32_t battLevelMv;
+    uint8_t battPercentage;
 
     // timing state
     unsigned long lastTickMs;
@@ -105,6 +115,11 @@ private:
     CRGB getTrackPixelColor(uint8_t track);
     CRGB getPagePixelColor(uint8_t pg);
     CRGB getPixelColor(uint8_t pixel);
+
+    // display stuff
+    RingBuffer<String, LOG_LENGTH> msgLog;
+    const uint16_t bkgndColor;
+    const uint16_t textColor;
 
 
 
@@ -141,6 +156,14 @@ public:
     // these get called however often to update the screen and neopixels
     void updateDisplay(ILI9341* display);
     void updatePixels(CRGB* pixels);
+    // for debugging mostly
+    void logMessage(const String& msg)
+    {
+        msgLog.push(msg);
+    }
+    // call this maybe once a minute to update the battery level
+    void checkBatteryLevel();
+
 
 };
 

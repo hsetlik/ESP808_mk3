@@ -47,7 +47,7 @@ public:
 
 //---------------------------------------------------------------------
 
-#define BUTTON_CHECK_HZ 800
+#define BUTTON_CHECK_HZ 200
 
 #define NUM_BUTTONS 26
 
@@ -100,8 +100,3 @@ public:
 
     void tick(uint16_t exp1bits, uint16_t exp2bits, uint16_t exp3bits);
 };
-
-
-
-
-

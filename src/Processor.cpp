@@ -6,12 +6,16 @@ Processor::Processor() : isPlaying(false),
                          altDown(false),
                          lastAltClickAt(0),
                          buttonHoldState(0),
+                         battLevelMv(BATT_MAX_MV),
+                         battPercentage(100),
                          lastTickMs(0),
                          digitalMode(false),
                          pageMode(false),
                          seq(NUM_HARDWARE_TRACKS),
                          fCurrentStep(0.0f),
-                         lastStep(0)
+                         lastStep(0),
+                         bkgndColor(Display::to565(0, 0, 0)),
+                         textColor(Display::to565(254, 233, 124))
 {
    // initialize our track color references here
    const uint8_t hueOffset = 16;
@@ -338,6 +342,7 @@ void Processor::nudgeSelectedTrack(bool up)
       if (selectedTrack == HardwareTrack::Accent)
          --selectedTrack;
    }
+   logMessage("Selected track: " + TrackNames[selectedTrack]);
 }
 
 void Processor::nudgeStepLevel(uint8_t button, bool up)
@@ -356,6 +361,7 @@ void Processor::nudgeTempo(bool dir)
       currentTempo = std::min<float>(TEMPO_MAX, currentTempo + incr);
    else
       currentTempo = std::max<float>(TEMPO_MIN, currentTempo - incr);
+   logMessage("Tempo: " + String(currentTempo));
 }
 
 Step *Processor::stepForButton(uint8_t b)
@@ -385,6 +391,7 @@ void Processor::handleSequenceKeyClick(uint8_t button)
    uint8_t idx = stepIdxForButton(button);
    Step *step = altKey() ? &seq.tracks[HardwareTrack::Accent].steps[idx] : &seq.tracks[selectedTrack].steps[idx];
    step->on = !step->on;
+   logMessage("Toggled Step " + String(idx));
 }
 
 //-Timing -----------------------------------------------------
@@ -454,11 +461,24 @@ uint64_t Processor::getPotLevels()
 
 void Processor::updateDisplay(ILI9341 *display)
 {
+   display->fillScreen(bkgndColor);
+   display->setTextColor(textColor);
+   display->setTextSize(1);
+   // 1. Draw the debug log stuff
+   uint16_t cursorY = DISPLAY_H - 8;
+   for (uint8_t i = 0; i < LOG_LENGTH; i++)
+   {
+      display->setCursor(3, cursorY);
+      display->print(msgLog[i]);
+      cursorY -= 8;
+   }
 }
+
+//------------------------------------------------------
 
 void Processor::updatePixels(CRGB *pixels)
 {
-   for(uint8_t p = 0; p < NUM_PIXELS; p++)
+   for (uint8_t p = 0; p < NUM_PIXELS; p++)
    {
       auto color = getPixelColor(p);
       uint8_t idx = Pixels::pixelIndex(p);
@@ -472,7 +492,7 @@ CRGB Processor::getStepPixelColor(uint8_t button, uint8_t track)
    bool currentStep = step == lastStep;
    if (!seq.tracks[track].steps[step].on)
    {
-      if(currentStep)
+      if (currentStep)
          return cursorColor;
       return offColor;
    }
@@ -482,22 +502,21 @@ CRGB Processor::getStepPixelColor(uint8_t button, uint8_t track)
    return blend(minColor, maxColor, (fract8)frac);
 }
 
-
 CRGB Processor::getTrackPixelColor(uint8_t track)
 {
-   if(track == selectedTrack)
+   if (track == selectedTrack)
       return trackColorsBright[track];
-   
-   if(seq.tracks[track].steps[lastStep].on && track != HardwareTrack::Accent)
+
+   if (seq.tracks[track].steps[lastStep].on && track != HardwareTrack::Accent)
       return trackColorsMid[track];
    return offColor;
 }
 
 CRGB Processor::getPagePixelColor(uint8_t pg)
 {
-   if(pageMode)
+   if (pageMode)
       return cursorColor;
-   if(lastStep / 16 == pg)
+   if (lastStep / 16 == pg)
       return cursorColor;
    return offColor;
 }
@@ -505,65 +524,73 @@ CRGB Processor::getPagePixelColor(uint8_t pg)
 CRGB Processor::getPixelColor(uint8_t pixel)
 {
    PixelID id = (PixelID)pixel;
-   switch(id)
+   switch (id)
    {
-      case PixelID::S1:
-         return getStepPixelColor(0, selectedTrack);
-      case PixelID::S2:
-         return getStepPixelColor(1, selectedTrack);
-      case PixelID::S3:
-         return getStepPixelColor(2, selectedTrack);
-      case PixelID::S4:
-         return getStepPixelColor(3, selectedTrack);
-      case PixelID::S5:
-         return getStepPixelColor(4, selectedTrack);
-      case PixelID::S6:
-         return getStepPixelColor(5, selectedTrack);
-      case PixelID::S7:
-         return getStepPixelColor(6, selectedTrack);
-      case PixelID::S8:
-         return getStepPixelColor(7, selectedTrack);
-      case PixelID::S9:
-         return getStepPixelColor(8, selectedTrack);
-      case PixelID::S10:
-         return getStepPixelColor(9, selectedTrack);
-      case PixelID::S11:
-         return getStepPixelColor(10, selectedTrack);
-      case PixelID::S12:
-         return getStepPixelColor(11, selectedTrack);
-      case PixelID::S13:
-         return getStepPixelColor(12, selectedTrack);
-      case PixelID::S14:
-         return getStepPixelColor(13, selectedTrack);
-      case PixelID::S15:
-         return getStepPixelColor(14, selectedTrack);
-      case PixelID::S16:
-         return getStepPixelColor(15, selectedTrack);
-      case PixelID::TR1:
-         return getTrackPixelColor(HardwareTrack::Kick1);
-      case PixelID::TR2:
-         return getTrackPixelColor(HardwareTrack::Kick2);
-      case PixelID::TR3:
-         return getTrackPixelColor(HardwareTrack::Snare);
-      case PixelID::TR4:
-         return getTrackPixelColor(HardwareTrack::ClosedHat);
-      case PixelID::TR5:
-         return getTrackPixelColor(HardwareTrack::OpenHat);
-      case PixelID::TR6:
-         return getTrackPixelColor(HardwareTrack::Clap);
-      case PixelID::TR7:
-         return getTrackPixelColor(HardwareTrack::Clave);
-      case PixelID::TR8:
-         return getTrackPixelColor(HardwareTrack::Digital);
-      case PixelID::PG1:
-         return getPagePixelColor(0);
-      case PixelID::PG2:
-         return getPagePixelColor(1);
-      case PixelID::PG3:
-         return getPagePixelColor(2);
-      case PixelID::PG4:
-         return getPagePixelColor(3);
-      default:
-         return offColor;
+   case PixelID::S1:
+      return getStepPixelColor(0, selectedTrack);
+   case PixelID::S2:
+      return getStepPixelColor(1, selectedTrack);
+   case PixelID::S3:
+      return getStepPixelColor(2, selectedTrack);
+   case PixelID::S4:
+      return getStepPixelColor(3, selectedTrack);
+   case PixelID::S5:
+      return getStepPixelColor(4, selectedTrack);
+   case PixelID::S6:
+      return getStepPixelColor(5, selectedTrack);
+   case PixelID::S7:
+      return getStepPixelColor(6, selectedTrack);
+   case PixelID::S8:
+      return getStepPixelColor(7, selectedTrack);
+   case PixelID::S9:
+      return getStepPixelColor(8, selectedTrack);
+   case PixelID::S10:
+      return getStepPixelColor(9, selectedTrack);
+   case PixelID::S11:
+      return getStepPixelColor(10, selectedTrack);
+   case PixelID::S12:
+      return getStepPixelColor(11, selectedTrack);
+   case PixelID::S13:
+      return getStepPixelColor(12, selectedTrack);
+   case PixelID::S14:
+      return getStepPixelColor(13, selectedTrack);
+   case PixelID::S15:
+      return getStepPixelColor(14, selectedTrack);
+   case PixelID::S16:
+      return getStepPixelColor(15, selectedTrack);
+   case PixelID::TR1:
+      return getTrackPixelColor(HardwareTrack::Kick1);
+   case PixelID::TR2:
+      return getTrackPixelColor(HardwareTrack::Kick2);
+   case PixelID::TR3:
+      return getTrackPixelColor(HardwareTrack::Snare);
+   case PixelID::TR4:
+      return getTrackPixelColor(HardwareTrack::ClosedHat);
+   case PixelID::TR5:
+      return getTrackPixelColor(HardwareTrack::OpenHat);
+   case PixelID::TR6:
+      return getTrackPixelColor(HardwareTrack::Clap);
+   case PixelID::TR7:
+      return getTrackPixelColor(HardwareTrack::Clave);
+   case PixelID::TR8:
+      return getTrackPixelColor(HardwareTrack::Digital);
+   case PixelID::PG1:
+      return getPagePixelColor(0);
+   case PixelID::PG2:
+      return getPagePixelColor(1);
+   case PixelID::PG3:
+      return getPagePixelColor(2);
+   case PixelID::PG4:
+      return getPagePixelColor(3);
+   default:
+      return offColor;
    }
+}
+
+void Processor::checkBatteryLevel()
+{
+   battLevelMv = analogReadMilliVolts(BATT_PIN);
+   // convert to float ratio then integer percentage
+   float fBatt = (float)(battLevelMv - BATT_MIN_MV) / (float)(BATT_MAX_MV - BATT_MIN_MV);
+   battPercentage = (uint8_t)(fBatt * 100.0f);
 }

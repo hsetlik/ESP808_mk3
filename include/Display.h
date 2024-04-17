@@ -10,6 +10,11 @@ using ILI9341 = Adafruit_ILI9341;
 
 #define NUM_PIXELS 28
 
+namespace Display
+{
+    uint16_t to565(uint8_t r, uint8_t g, uint8_t b);
+}
+
 //-------------------------------------------------
 
 
