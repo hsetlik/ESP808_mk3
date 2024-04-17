@@ -348,7 +348,7 @@ void Processor::nudgeSelectedTrack(bool up)
 
 void Processor::nudgeStepLevel(uint8_t button, bool up)
 {
-   Step *s = stepForButton(button);
+   IntStep *s = stepForButton(button);
    if (up)
       s->level = std::min<uint8_t>(s->level + 1, LEVEL_MAX);
    else
@@ -365,7 +365,7 @@ void Processor::nudgeTempo(bool dir)
    logMessage("Tempo: " + String(currentTempo));
 }
 
-Step *Processor::stepForButton(uint8_t b)
+IntStep *Processor::stepForButton(uint8_t b)
 {
    uint8_t offset = lastStep / 16;
    return &seq.tracks[selectedTrack].steps[(offset * 16) + b];
@@ -390,7 +390,7 @@ uint8_t Processor::getHeldSequenceKey()
 void Processor::handleSequenceKeyClick(uint8_t button)
 {
    uint8_t idx = stepIdxForButton(button);
-   Step *step = altKey() ? &seq.tracks[HardwareTrack::Accent].steps[idx] : &seq.tracks[selectedTrack].steps[idx];
+   IntStep *step = altKey() ? &seq.tracks[HardwareTrack::Accent].steps[idx] : &seq.tracks[selectedTrack].steps[idx];
    step->on = !step->on;
    logMessage("Toggled Step " + String(idx));
 }

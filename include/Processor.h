@@ -2,6 +2,7 @@
 #include "Controls.h"
 #include "Display.h"
 #include "Outputs.h"
+#include "Sequence.h"
 #include <Audio.h>
 #include <FastLED.h>
 
@@ -15,7 +16,6 @@
 #define LEVEL_MAX 127
 #define LEVEL_MIN 30
 
-#define SEQ_LENGTH 64
 #define PG_LENGTH 16
 
 #define NUM_HARDWARE_TRACKS 8
@@ -39,32 +39,32 @@
 
 
 //----------------------------------------------------------------
-struct Step
+struct IntStep
 {
     bool on = false;
     uint8_t level = LEVEL_MAX;
 
-    bool operator==(Step& other)
+    bool operator==(IntStep& other)
     {
         return (on == other.on) && (level == other.level);
     }
-    void operator=(Step& other)
+    void operator=(IntStep& other)
     {
         on = other.on;
         level = other.level;
     }
 };
 
-struct Track
+struct IntTrack
 {
-Step steps[SEQ_LENGTH];
+IntStep steps[SEQ_LENGTH];
 };
 
 class Sequence
 {
 public:
     const uint8_t numTracks;
-    Track tracks[MAX_TRACKS];
+    IntTrack tracks[MAX_TRACKS];
     Sequence(uint8_t nTracks) :
     numTracks(std::min<uint8_t>(nTracks, MAX_TRACKS))
     {
@@ -135,7 +135,7 @@ private:
     void handleSequenceKeyClick(uint8_t button);
     // get a pointer to the step state that a given button currently refers to
     uint8_t stepIdxForButton(uint8_t button);
-    Step* stepForButton(uint8_t b);
+    IntStep* stepForButton(uint8_t b);
     
     // sequence button helpers
     bool sequenceKeyHeld() {return buttonHoldState != 0; }
