@@ -467,6 +467,7 @@ void Processor::updateDisplay(ILI9341 *display)
    drawMsgLog(display);
    drawBatteryLevel(display);
    drawModeLabel(display);
+   drawFrameRateLabel(display);
 
 }
 
@@ -522,6 +523,15 @@ void Processor::drawModeLabel(ILI9341* display)
       display->print("SEQUENCE MODE");
    }
 }
+
+void Processor::drawFrameRateLabel(ILI9341* display)
+{
+   const int16_t x = 0;
+   const uint16_t y = 10;
+   display->setCursor(x, y);
+   display->print("Actual framerate: " + String(currentFrameRate) + "fps");
+}
+
 //------------------------------------------------------
 
 void Processor::updatePixels(CRGB *pixels)

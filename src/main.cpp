@@ -215,7 +215,7 @@ void loop()
     buttonDataReady = false;
   }
 
-  if(encoderTriggered)
+  while(encoderTriggered)
   {
     encoders.interruptSent(lastEncoderPin);
     encoderTriggered = false;

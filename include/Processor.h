@@ -125,8 +125,7 @@ private:
     void drawMsgLog(ILI9341* display);
     void drawBatteryLevel(ILI9341* display);
     void drawModeLabel(ILI9341* display);
-
-
+    void drawFrameRateLabel(ILI9341* display);
 
     // state helpers
     bool altKey() { return altDown || (millis() - lastAltClickAt) < 80; }
