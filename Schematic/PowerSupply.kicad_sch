@@ -2381,7 +2381,7 @@
   )
 
   (text "According to the datasheet,\nthis can work with inputs \nas low as 300mV, so we'll \nset our 0% battery in\nsoftware at ~400mV to be safe"
-    (at 74.295 115.062 0)
+    (at 129.413 183.642 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0c626f11-f410-4e29-8299-a8946762e1bb)
   )
@@ -4185,7 +4185,7 @@
     (property "Reference" "#PWR0516" (at 46.355 127.635 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+3.3V" (at 38.354 127.635 90)
+    (property "Value" "+3.3V" (at 40.005 127.635 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (at 42.545 127.635 0)

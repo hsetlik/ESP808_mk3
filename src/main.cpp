@@ -21,6 +21,10 @@ ISRs that need to go here:
   - Set the correct level for each of the 8 gate lines on Expander 3
   - Set both quad digital potentiometers to the correct value
 
+4. Timer interrupt to request and render the next audio buffer for
+the digital voices
+  
+
 4. Faux interrupt to update the display and NeoPixels
   - Update the ILI9341 display and the NUM_PIXELS NeoPixel LEDs
   - 24fps probably fine

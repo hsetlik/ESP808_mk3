@@ -2,7 +2,7 @@
 #include "Controls.h"
 #include "Display.h"
 #include "Outputs.h"
-#include "DigitalAudio.h"
+#include "Audio.h"
 #include <FastLED.h>
 
 // definitions for param mins and maxes
