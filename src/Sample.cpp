@@ -22,6 +22,10 @@ lengthSamples(0)
     // because we'll mix everything down to 32 bit mono
     data = (float*)ps_malloc((size_t)(lengthSamples * 4));
 
+    // now we do the rendering
+    if(!Audio::mixDownAudio(metadata, data))
+        Serial.println("Error! Failed to mix down audio");
+
 }
 
 

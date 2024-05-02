@@ -56,8 +56,26 @@ namespace Audio
     int32_t toDACSample(float sample);
     float toFloatSample(uint32_t dacSample);
     //WAV decoding stuff--------------------------------------------
+    // check if the file at this path on the SD card has a valid WAV header
     bool isValidWAV(const String& name);
+    /**
+     * @brief Get the WAV Metadata For a file on the SD card
+     * 
+     * @param name the file path
+     * @return WAVMetadata 
+     */
     WAVMetadata getMetadataFor(const String& name);
+
+    /**
+     * @brief This does the heavy lifting of 
+     * loading the wav PCM data into our PSRAM buffer in a 
+     * processing-friendly way
+     * 
+     * @param wav The file's metadata
+     * @param buffer The buffer in PRSAM (note: this must be allocated with ps_malloc() BEFORE it's passed to this function)
+     * @return success or failure 
+     */
+    bool mixDownAudio(WAVMetadata& wav, float* buffer);
 }
 
 //--------------------------------------------------------------

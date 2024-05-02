@@ -13,13 +13,13 @@ float Audio::toFloatSample(uint32_t sample)
     return (float)sample / F32_MAX;
 }
 
-bool Audio::isValidWAV(const String& name)
+bool Audio::isValidWAV(const String &name)
 {
-    if(SD.exists(name))
+    if (SD.exists(name))
     {
         auto file = SD.open(name);
-        // if we have a file with this name, 
-        // load its first 16 bytes into memory 
+        // if we have a file with this name,
+        // load its first 16 bytes into memory
         // to check that we have a valid WAV header
         char header[16];
         file.readBytes(header, 16);
@@ -28,7 +28,7 @@ bool Audio::isValidWAV(const String& name)
         String wavStr = "";
         String fmtStr = "";
 
-        for(uint8_t i = 0; i < 4; i++)
+        for (uint8_t i = 0; i < 4; i++)
         {
             riffStr += header[0 + i];
             wavStr += header[8 + i];
@@ -41,16 +41,16 @@ bool Audio::isValidWAV(const String& name)
         return false;
 }
 
-WAVMetadata Audio::getMetadataFor(const String& name)
+WAVMetadata Audio::getMetadataFor(const String &name)
 {
     WAVMetadata data;
     data.fileName = name;
-    if(SD.exists(name))
+    if (SD.exists(name))
     {
         auto file = SD.open(name);
         // the total header should be 44 bytes long
         char header[44];
-        if(file.readBytes(header, 44) != 44)
+        if (file.readBytes(header, 44) != 44)
             Serial.println("Failed to read WAV header at: " + name);
         file.close();
         // the channel mode is a 16 bit word at bytes 22 & 23
@@ -59,7 +59,7 @@ WAVMetadata Audio::getMetadataFor(const String& name)
 
         // right of that is a 32 bit dword containing the sample rate
         uint32_t sampleRate = 0;
-        for(uint8_t i = 0; i < 4; i++)
+        for (uint8_t i = 0; i < 4; i++)
         {
             sampleRate = sampleRate | ((uint32_t)header[24 + i] << (i * 8));
         }
@@ -71,7 +71,7 @@ WAVMetadata Audio::getMetadataFor(const String& name)
 
         // and finally the data chunk size is a dword at byte 40
         uint32_t size = 0;
-        for(uint8_t i = 0; i < 4; i++)
+        for (uint8_t i = 0; i < 4; i++)
         {
             size = size | ((uint32_t)header[40 + i] << (i * 8));
         }
@@ -79,9 +79,97 @@ WAVMetadata Audio::getMetadataFor(const String& name)
 
         // now we can calculate how much PSRAM we need to allocate and how long our sample is
         uint32_t sampleBytes = data.isStereo ? (uint32_t)(bitsPerSample * 2) / 8 : (uint32_t)bitsPerSample / 8;
-        data.lengthSamples = data.dataChunkSize / sampleBytes; 
+        data.lengthSamples = data.dataChunkSize / sampleBytes;
     }
     return data;
+}
+
+bool Audio::mixDownAudio(WAVMetadata &wav, float *buffer)
+{
+    // 1. Grip the file
+    auto file = SD.open(wav.fileName);
+    if (!file.seek(44))
+    {
+        Serial.println("Could not seek past header for file: " + wav.fileName);
+        return false;
+    }
+
+    const size_t bytesPerSample = (size_t)wav.bitsPerSample / 8;
+    size_t bufferIdx = 0;
+    if(bytesPerSample == 4) // our samples are 32-bit floats
+    {
+        if(wav.isStereo)
+        {
+            
+            for(size_t s = 0; s < wav.lengthSamples; s++)
+            {
+                float lSample = 0.0f;
+                uint8_t* lBuf = reinterpret_cast<uint8_t*>(&lSample);
+                file.read(lBuf, bytesPerSample);
+                float rSample = 0.0f;
+                uint8_t* rBuf = reinterpret_cast<uint8_t*>(&rSample);
+                file.read(rBuf, bytesPerSample);
+                buffer[s] = (lSample + rSample) * 0.5f;
+            }
+
+        }
+        else
+        {
+            for(size_t s = 0; s < wav.lengthSamples; s++)
+            {
+                float fSample = 0.0f;
+                uint8_t* buf = reinterpret_cast<uint8_t*>(&fSample);
+                file.read(buf, bytesPerSample);
+                buffer[s] = fSample;
+            }
+        }
+        return true;
+
+    }
+    else // our samples are either 16-bit or 24-bit unsigned ints
+    {
+        uint32_t maxSampleVal = 0;
+        for(uint8_t i = 0; i < bytesPerSample; i++)
+        {
+            uint8_t b = ~0;
+            uint32_t mask = (uint32_t)b << (i * 8);
+            maxSampleVal = mask | maxSampleVal;
+        }
+
+        if(wav.isStereo)
+        {
+            for(size_t s = 0; s < wav.lengthSamples; s++)
+            {
+                uint32_t iLeft = 0;
+                uint8_t* lBuf = reinterpret_cast<uint8_t*>(&iLeft);
+                file.read(lBuf, bytesPerSample);
+                float nLeft = (float)iLeft / (float)maxSampleVal;
+                nLeft = (nLeft - 0.5f) * 2.0f;
+
+                uint32_t iRight = 0;
+                uint8_t* rBuf = reinterpret_cast<uint8_t*>(&iRight);
+                file.read(rBuf, bytesPerSample);
+                float nRight = (float)iRight / (float)maxSampleVal;
+                nRight = (nRight - 0.5f) * 2.0f;
+
+                buffer[s] = (nLeft + nRight) * 0.5f;
+            }
+        }
+        else
+        {
+            for(size_t s = 0; s < wav.lengthSamples; s++)
+            {
+                uint32_t iSample = 0;
+                uint8_t* buf = reinterpret_cast<uint8_t*>(&iSample);
+                file.read(buf, bytesPerSample);
+
+                float fNorm = (float)iSample / (float)maxSampleVal;
+                buffer[s] = (fNorm - 0.5f) * 2.0f;
+            }
+        }
+        return true;
+    }
+
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -107,14 +195,14 @@ void PCM510xA::init()
     config.intr_alloc_flags = ESP_INTR_FLAG_LEVEL1;
 
     esp_err_t installErr = i2s_driver_install((i2s_port_t)port, &config, 0, NULL);
-    if(installErr != ESP_OK)
+    if (installErr != ESP_OK)
     {
         String errName = esp_err_to_name(installErr);
         Serial.println("I2S install failed with error: " + errName);
     }
     else
         Serial.println("I2S install succeded");
-    
+
     // 2. Set up pin config
     pinConfig.bck_io_num = bckPin;
     pinConfig.ws_io_num = wsPin;
@@ -122,7 +210,7 @@ void PCM510xA::init()
     pinConfig.data_in_num = I2S_PIN_NO_CHANGE;
 
     esp_err_t pinErr = i2s_set_pin((i2s_port_t)port, &pinConfig);
-    if(pinErr != ESP_OK)
+    if (pinErr != ESP_OK)
     {
         String errName = esp_err_to_name(pinErr);
         Serial.println("I2S pin setup failed with error: " + errName);
@@ -131,7 +219,6 @@ void PCM510xA::init()
         Serial.println("I2S pin setup succeeded");
 
     i2s_zero_dma_buffer((i2s_port_t)port);
-
 }
 
 uint32_t PCM510xA::getInputInterruptInterval()
