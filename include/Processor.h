@@ -94,6 +94,7 @@ private:
     uint16_t currentFrameRate;
     // control mode stuff
     bool digitalMode;
+    bool voiceMode;
     bool pageMode;
 
     // Pattern data

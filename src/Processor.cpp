@@ -11,6 +11,7 @@ Processor::Processor() : isPlaying(false),
                          lastTickMs(0),
                          currentFrameRate(24),
                          digitalMode(false),
+                         voiceMode(false),
                          pageMode(false),
                          seq(NUM_HARDWARE_TRACKS),
                          fCurrentStep(0.0f),
@@ -113,6 +114,7 @@ void Processor::handleClick(uint8_t button)
       digitalMode = !digitalMode;
       break;
    case ButtonID::Enc2:
+      voiceMode = !voiceMode;
       break;
    case ButtonID::Enc3:
       break;
@@ -120,12 +122,16 @@ void Processor::handleClick(uint8_t button)
       break;
    //------------------------------
    case ButtonID::PgLeft:
+      //TODO
       break;
    case ButtonID::PgRight:
+      //TODO
       break;
    case ButtonID::Load:
+      //TODO
       break;
    case ButtonID::Save:
+      //TODO
       break;
    case ButtonID::Alt:
       lastAltClickAt = millis();
@@ -389,6 +395,11 @@ uint8_t Processor::getHeldSequenceKey()
 
 void Processor::handleSequenceKeyClick(uint8_t button)
 {
+   if(voiceMode && button < 8 && !isPlaying)
+   {
+      lastTriggerMs[button] = millis();
+      return;
+   }
    uint8_t idx = stepIdxForButton(button);
    Step *step = altKey() ? &seq.tracks[HardwareTrack::Accent].steps[idx] : &seq.tracks[selectedTrack].steps[idx];
    step->on = !step->on;
