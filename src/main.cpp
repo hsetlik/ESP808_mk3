@@ -1,5 +1,6 @@
 #include "Processor.h"
 #include "Outputs.h"
+#include "Audio.h"
 #define OUTPUT_UPDATE_HZ 300
 
 #define DISPLAY_UPDATE_HZ 24
@@ -46,6 +47,9 @@ ILI9341* display = nullptr;
 // Neopixels
 CRGB pixels[NUM_PIXELS];
 
+// DAC
+PCM510xA audioDAC(0, I2S_BCK, I2S_SCK, I2S_LR, I2S_D);
+
 // Control state stuff
 Encoders encoders;
 Buttons buttons;
@@ -56,6 +60,7 @@ Processor proc;
 // Timer stuff
 hw_timer_t* buttonTimer = NULL;
 hw_timer_t* outputTimer = NULL;
+hw_timer_t* audioTimer = NULL;
 //portMUX_TYPE buttonTimerMux = portMUX_INITIALIZER_UNLOCKED;
 
 // ISRs --------------------------------------------------------------------
@@ -109,6 +114,18 @@ void IRAM_ATTR outputISR()
   newOutputNeeded = true;
 }
 
+// Digital audio stuff
+volatile bool needsNewAudio = false;
+AudioBuffer audioBuf;
+
+void IRAM_ATTR audioISR()
+{
+  audioDAC.transmitBuffer(audioBuf);
+  needsNewAudio = true;
+}
+
+
+
 //----------------------------------------------------------------------
 
 void setup() 
@@ -138,6 +155,9 @@ void setup()
   pinMode(I2S_SCK, OUTPUT);
   pinMode(I2S_BCK, OUTPUT);
 
+  //Init I2S
+  audioDAC.init();
+
   // start SPI
   SPI.begin(SCK, MISO, MOSI, EXP_CS);
 
@@ -166,6 +186,12 @@ void setup()
   timerAttachInterrupt(outputTimer, &outputISR, true);
   timerAlarmWrite(outputTimer, 1000000 / OUTPUT_UPDATE_HZ, true);
   timerAlarmEnable(outputTimer);
+
+  // audio interrupt
+  audioTimer = timerBegin(2, 80, true);
+  timerAttachInterrupt(audioTimer, &audioISR, true);
+  timerAlarmWrite(audioTimer, audioDAC.getInputInterruptInterval(), true);
+  timerAlarmEnable(audioTimer);
 
   // attach the encoder interrupt
   attachInterrupt(EXP_INTR, encoderISR, FALLING);

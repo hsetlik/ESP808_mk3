@@ -30,7 +30,6 @@ static const int32_t I32_MAX = 2147483647;
 
 static const float F32_MAX = 2147483647.0f;
 
-typedef int32_t DACBuffer[BUFFER_LENGTH * 2];
 
 typedef float AudioBuffer[BUFFER_LENGTH * 2];
 
@@ -115,7 +114,7 @@ public:
      * @param ws  Word select pin 
      * @param dout Data output pin
      */
-    PCM510xA(uint8_t i2sPort, uint8_t bck, uint8_t ws, uint8_t dout);
+    PCM510xA(uint8_t i2sPort, uint8_t bck, uint8_t sck, uint8_t ws, uint8_t dout);
 
     /**
      * @brief Set up the pins and DMA stuff for I2S.
@@ -133,13 +132,17 @@ public:
      * terms of cycles of a 1MHz timer
      */
     uint32_t getInputInterruptInterval();
+
+    void transmitBuffer(AudioBuffer& buf);
     
 private:
     const uint8_t port;
     const uint8_t bckPin;
+    const uint8_t mckPin;
     const uint8_t wsPin;
     const uint8_t doutPin;
     i2s_config_t config;
     i2s_pin_config_t pinConfig;
+    size_t bytesWritten;
 
 };

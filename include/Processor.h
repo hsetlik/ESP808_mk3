@@ -4,6 +4,7 @@
 #include "Outputs.h"
 #include "Audio.h"
 #include <FastLED.h>
+#include <functional>
 
 // definitions for param mins and maxes
 #define TEMPO_MIN 30.0f

@@ -50,13 +50,28 @@ enum PixelID : uint8_t
     PG4
 };
 
+//-----------------------------------------------------------------------------------
+
 namespace Pixels
 {
-    // note: these two functions remap the more intuitive PixelID numbering above
-    // to the actual order of the LEDs in hardware. 
+
+    /**
+     * @brief Convert the more intuitive pixel index 
+     * used by the 'PixelID' enum to the actual index of the pixel
+     * in hardware
+     * 
+     * @param pixel - the pixel's ID
+     * @return uint8_t - the pixel's index in the circuit 
+     */
     uint8_t pixelIndex(uint8_t pixel);
     uint8_t pixelIndex(PixelID id);
-    //
+
+    /**
+     * @brief Get the PixelID for a HardwareTrack
+     * 
+     * @param trk 
+     * @return PixelID- the ID of the track's pixel
+     */
     PixelID pixelForTrack(HardwareTrack trk);
     PixelID pixelForTrack(uint8_t trk);
 

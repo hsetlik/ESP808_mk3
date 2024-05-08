@@ -96,58 +96,57 @@ bool Audio::mixDownAudio(WAVMetadata &wav, float *buffer)
 
     const size_t bytesPerSample = (size_t)wav.bitsPerSample / 8;
     size_t bufferIdx = 0;
-    if(bytesPerSample == 4) // our samples are 32-bit floats
+    if (bytesPerSample == 4) // our samples are 32-bit floats
     {
-        if(wav.isStereo)
+        if (wav.isStereo)
         {
-            
-            for(size_t s = 0; s < wav.lengthSamples; s++)
+
+            for (size_t s = 0; s < wav.lengthSamples; s++)
             {
                 float lSample = 0.0f;
-                uint8_t* lBuf = reinterpret_cast<uint8_t*>(&lSample);
+                uint8_t *lBuf = reinterpret_cast<uint8_t *>(&lSample);
                 file.read(lBuf, bytesPerSample);
                 float rSample = 0.0f;
-                uint8_t* rBuf = reinterpret_cast<uint8_t*>(&rSample);
+                uint8_t *rBuf = reinterpret_cast<uint8_t *>(&rSample);
                 file.read(rBuf, bytesPerSample);
                 buffer[s] = (lSample + rSample) * 0.5f;
             }
-
         }
         else
         {
-            for(size_t s = 0; s < wav.lengthSamples; s++)
+            for (size_t s = 0; s < wav.lengthSamples; s++)
             {
                 float fSample = 0.0f;
-                uint8_t* buf = reinterpret_cast<uint8_t*>(&fSample);
+                uint8_t *buf = reinterpret_cast<uint8_t *>(&fSample);
                 file.read(buf, bytesPerSample);
                 buffer[s] = fSample;
             }
         }
+        file.close();
         return true;
-
     }
     else // our samples are either 16-bit or 24-bit unsigned ints
     {
         uint32_t maxSampleVal = 0;
-        for(uint8_t i = 0; i < bytesPerSample; i++)
+        for (uint8_t i = 0; i < bytesPerSample; i++)
         {
             uint8_t b = ~0;
             uint32_t mask = (uint32_t)b << (i * 8);
             maxSampleVal = mask | maxSampleVal;
         }
 
-        if(wav.isStereo)
+        if (wav.isStereo)
         {
-            for(size_t s = 0; s < wav.lengthSamples; s++)
+            for (size_t s = 0; s < wav.lengthSamples; s++)
             {
                 uint32_t iLeft = 0;
-                uint8_t* lBuf = reinterpret_cast<uint8_t*>(&iLeft);
+                uint8_t *lBuf = reinterpret_cast<uint8_t *>(&iLeft);
                 file.read(lBuf, bytesPerSample);
                 float nLeft = (float)iLeft / (float)maxSampleVal;
                 nLeft = (nLeft - 0.5f) * 2.0f;
 
                 uint32_t iRight = 0;
-                uint8_t* rBuf = reinterpret_cast<uint8_t*>(&iRight);
+                uint8_t *rBuf = reinterpret_cast<uint8_t *>(&iRight);
                 file.read(rBuf, bytesPerSample);
                 float nRight = (float)iRight / (float)maxSampleVal;
                 nRight = (nRight - 0.5f) * 2.0f;
@@ -157,24 +156,30 @@ bool Audio::mixDownAudio(WAVMetadata &wav, float *buffer)
         }
         else
         {
-            for(size_t s = 0; s < wav.lengthSamples; s++)
+            for (size_t s = 0; s < wav.lengthSamples; s++)
             {
                 uint32_t iSample = 0;
-                uint8_t* buf = reinterpret_cast<uint8_t*>(&iSample);
+                uint8_t *buf = reinterpret_cast<uint8_t *>(&iSample);
                 file.read(buf, bytesPerSample);
 
                 float fNorm = (float)iSample / (float)maxSampleVal;
                 buffer[s] = (fNorm - 0.5f) * 2.0f;
             }
         }
+        file.close();
         return true;
     }
-
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-PCM510xA::PCM510xA(uint8_t i2sPort, uint8_t bck, uint8_t ws, uint8_t dout) : port(i2sPort), bckPin(bck), wsPin(ws), doutPin(dout)
+PCM510xA::PCM510xA(uint8_t i2sPort, uint8_t bck, uint8_t sck, uint8_t ws, uint8_t dout) : 
+port(i2sPort), 
+bckPin(bck), 
+mckPin(sck), 
+wsPin(ws), 
+doutPin(dout), 
+bytesWritten(0)
 {
     // wait to set up the config objects until init()
 }
@@ -205,6 +210,7 @@ void PCM510xA::init()
 
     // 2. Set up pin config
     pinConfig.bck_io_num = bckPin;
+    pinConfig.mck_io_num = mckPin;
     pinConfig.ws_io_num = wsPin;
     pinConfig.data_out_num = doutPin;
     pinConfig.data_in_num = I2S_PIN_NO_CHANGE;
@@ -225,4 +231,20 @@ uint32_t PCM510xA::getInputInterruptInterval()
 {
     float sampleLengthMicros = 1000000.0f / (float)SAMPLE_RATE;
     return (uint32_t)(sampleLengthMicros * (float)BUFFER_LENGTH);
+}
+
+void PCM510xA::transmitBuffer(AudioBuffer &buf)
+{
+    // NOTE: if we were using a 16 or 24 bit DAC we would need to convert the input data to PCM int formats,
+    //  but I2S uses the same 32 bit float format that c++ natively uses when using 32 bit devices
+    esp_err_t i2sErr = i2s_write((i2s_port_t)port, &buf, AUDIO_BUFFER_BYTES, &bytesWritten, portMAX_DELAY);
+    if(i2sErr != ESP_OK)
+    {
+        String errName = esp_err_to_name(i2sErr);
+        Serial.println("I2S PCM transmission failed with error: " + errName);      
+    }
+    else if(bytesWritten != AUDIO_BUFFER_BYTES)
+    {
+        Serial.println("Warning! Only wrote " + String(bytesWritten) + " bytes of intended " + String(AUDIO_BUFFER_BYTES));
+    }
 }
