@@ -2,7 +2,7 @@
 #include "Controls.h"
 #include "Display.h"
 #include "Outputs.h"
-#include "Audio.h"
+#include "Sample.h"
 #include <FastLED.h>
 #include <functional>
 

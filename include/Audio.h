@@ -75,6 +75,9 @@ namespace Audio
      * @return success or failure 
      */
     bool mixDownAudio(WAVMetadata& wav, float* buffer);
+
+    // needed this somewhere
+    float fLerp(float a, float b, float t);
 }
 
 //--------------------------------------------------------------

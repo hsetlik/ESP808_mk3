@@ -171,6 +171,11 @@ bool Audio::mixDownAudio(WAVMetadata &wav, float *buffer)
     }
 }
 
+
+float Audio::fLerp(float a, float b, float t)
+{
+    return a + ((b - a) * t);
+}
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 PCM510xA::PCM510xA(uint8_t i2sPort, uint8_t bck, uint8_t sck, uint8_t ws, uint8_t dout) : 

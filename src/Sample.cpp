@@ -1,14 +1,8 @@
 #include "Sample.h"
 
 Sample::Sample(const String &name) : fileName(name),
-                                     state(SampleState::Idle),
-                                     sampleIdx(0),
                                      data(nullptr),
-                                     lengthSamples(0),
-                                     pan(PAN_DEFAULT),
-                                     currentLevel(1.0f),
-                                     trackLevel(1.0f),
-                                     samplesIntoRetrig(0)
+                                     lengthSamples(0)
 {
     if (!SD.exists(fileName))
     {
@@ -19,7 +13,7 @@ Sample::Sample(const String &name) : fileName(name),
         Serial.println("Error! Invalid WAV file at: " + fileName);
     }
     auto metadata = Audio::getMetadataFor(fileName);
-    lengthSamples = (unsigned long)metadata.lengthSamples;
+    lengthSamples = metadata.lengthSamples;
     // now we allocate psram based on duration of the file, not on the data size
     // because we'll mix everything down to 32 bit mono
     data = (float *)ps_malloc((size_t)(lengthSamples * 4));
@@ -34,55 +28,132 @@ Sample::~Sample()
     free(data);
 }
 
-void Sample::trigger(uint8_t level)
+//-----------------------------------------------------------------------------------
+
+SamplerVoice::SamplerVoice() : sample(nullptr),
+                               active(false),
+                               sampleIdx(0),
+                               retrigIdx(0),
+                               state(Idle),
+                               stepLevel(127),
+                               retrigStepLevel(127),
+                               pan(PAN_DEFAULT),
+                               level(LEVEL_DEFAULT),
+                               netLevel(LEVEL_DEFAULT),
+                               netRetrigLevel(LEVEL_DEFAULT)
 {
-    currentLevel = trackLevel * ((float)level / 127.0f);
-    if (state == SampleState::Idle)
+}
+
+SamplerVoice::SamplerVoice(const String &path) : sample(nullptr),
+                                                 active(false),
+                                                 sampleIdx(0),
+                                                 retrigIdx(0),
+                                                 state(Idle),
+                                                 stepLevel(127),
+                                                 retrigStepLevel(127),
+                                                 pan(PAN_DEFAULT),
+                                                 level(LEVEL_DEFAULT),
+                                                 netLevel(LEVEL_DEFAULT),
+                                                 netRetrigLevel(LEVEL_DEFAULT)
+{
+    if (Audio::isValidWAV(path))
     {
-        state = SampleState::Playing;
-        sampleIdx = 0;
-        samplesIntoRetrig = 0;
+        sample.reset(new Sample(path));
+        active = true;
     }
-    else if (lengthSamples - sampleIdx > RETRIG_LENGTH)
+    else
     {
-        state == SampleState::Retrig;
-        samplesIntoRetrig = 0;
+        Serial.println("Error! No Valid WAV file at " + path);
     }
 }
 
-void Sample::renderNext(float *l, float *r)
+void SamplerVoice::nudgeLevel(bool dir)
 {
-    switch (state)
+    if(dir)
+        level = std::min<float>(level + LEVEL_INCR, LEVEL_MAX);
+    else
+        level = std::max<float>(level - LEVEL_INCR, LEVEL_MIN);
+}
+
+void SamplerVoice::nudgePan(bool dir)
+{
+    if(dir)
+        pan = std::min<float>(pan + PAN_INCR, PAN_MAX);
+    else
+        pan = std::max<float>(pan - PAN_INCR, PAN_MIN);
+}
+
+void SamplerVoice::trigger(uint8_t sLevel)
+{
+    switch(state)
     {
-    case Idle:
-        break;
-    case Playing:
-        float &fMono = data[sampleIdx];
-        *l += currentLevel * (fMono * pan);
-        *r += currentLevel * (fMono * (1.0f - pan));
-        ++sampleIdx;
-        if (sampleIdx == lengthSamples) // we've finished playback
-        {
-            state = SampleState::Idle;
+        case Idle:
             sampleIdx = 0;
-        }
-        break;
-    case Retrig:
-        float fMix = (float)samplesIntoRetrig / (float)RETRIG_LENGTH;
-        float fMono = (data[samplesIntoRetrig] * fMix) + (data[sampleIdx] * (1.0f - fMix));
-        *l += currentLevel * (fMono * pan);
-        *r += currentLevel * (fMono * (1.0f - pan));
-        ++samplesIntoRetrig;
-        ++sampleIdx;
-        // if we're at the end of the retrig
-        if (samplesIntoRetrig == RETRIG_LENGTH)
-        {
-            sampleIdx = samplesIntoRetrig;
-            samplesIntoRetrig = 0;
-            state = SampleState::Playing;
-        }
-        break;
-    default:
-        break;
+            retrigIdx = 0;
+            state = Playing;
+            stepLevel = sLevel;
+            // calculate the level for this step now
+            netLevel = ((float)stepLevel / 127.0f) * level;
+            break;
+        case Playing:
+            retrigIdx = 0;
+            state = Retrig;
+            retrigStepLevel = sLevel;
+            netRetrigLevel = ((float)retrigStepLevel / 127.0f) * level;
+            break;
+        case Retrig:
+            retrigIdx = 0;
+            state = Retrig;
+            retrigStepLevel = sLevel;
+            netRetrigLevel = ((float)retrigStepLevel / 127.0f) * level;
+            break;
+    }
+}
+
+
+void SamplerVoice::renderSample(float* left, float* right)
+{
+    // this is basically just a finite state machine
+    if(!active)
+        return;
+    switch(state)
+    {
+        case Idle:
+            break;
+        case Playing:
+            float mono = sample->getSample(sampleIdx);
+            float dLeft = (mono * netLevel) * pan;
+            float dRight = (mono * netLevel) * (1.0f - pan);
+            *left += dLeft;
+            *right += dRight;
+            sampleIdx++;
+            if(sampleIdx >= sample->getLength()) // sample is finished playing
+            {
+                sampleIdx = 0;
+                retrigIdx = 0;
+                state = Idle;
+            }
+            break;
+        case Retrig:
+            float t = (float)retrigIdx / (float)RETRIG_LENGTH;
+            float mono = Audio::fLerp(
+                sample->getSample(sampleIdx) * netLevel, 
+                sample->getSample(retrigIdx) * netRetrigLevel, 
+                t);
+            *left += mono * pan;
+            *right += mono * (1.0f - pan);
+            sampleIdx++;
+            retrigIdx++;
+            if(retrigIdx >= RETRIG_LENGTH || sampleIdx >= sample->getLength()) // retrig phase is done
+            {
+                // pass the retrig stuff to the regular stuff
+                sampleIdx = retrigIdx;
+                stepLevel = retrigStepLevel;
+                netLevel = netRetrigLevel;
+                state = Playing;
+            }
+            break;
+        default:
+            break; 
     }
 }
