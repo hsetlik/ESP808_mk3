@@ -28,6 +28,49 @@ Sample::~Sample()
     free(data);
 }
 
+
+bool Sample::isValidSampleFile(const String& path)
+{
+    if(Audio::isValidWAV(path))
+    {
+        auto metadata = Audio::getMetadataFor(path);
+        return metadata.lengthSamples <= MAX_LENGTH_SAMPLES;
+    }
+    return false;
+}
+
+void Sample::getAvailableSamples(SamplePathArr* paths, uint16_t* numSamples)
+{
+    File root = SD.open("/");
+    getSamplesInDir(paths, numSamples, root);
+}
+
+void Sample::getSamplesInDir(SamplePathArr* paths, uint16_t* numSamples, File dir)
+{
+    while(true)
+    {
+        File f = dir.openNextFile();
+        // if the file is invalid, we've finished with this directory and break the recursion
+        if(!f)
+        {
+            return;
+        }
+        if(f.isDirectory())
+        {
+            getSamplesInDir(paths, numSamples, f);
+        }
+        else if (isValidSampleFile(f.path()))
+        {
+            *paths[*numSamples] = f.path();
+            *numSamples += 1;
+        }
+        f.close();
+
+    }
+
+}
+
+
 //-----------------------------------------------------------------------------------
 
 SamplerVoice::SamplerVoice() : sample(nullptr),

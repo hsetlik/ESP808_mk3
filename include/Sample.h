@@ -17,13 +17,37 @@
 // when retriggering, fade between the beginning and end of the sample for about 30ms
 #define RETRIG_LENGTH 600 
 
+/*
+    With 32 bit mono and current sample rate, 1s of audio takes up 176,400 bytes out of the total 2MB of PSRAM
+    in the WROOM module. In other words we can fit about 11.33 seconds of mono audio data in PSRAM altogether. 
+    If we round down to 11s (for a small margin of error) we can do:
+    - 4 channels with a 2.75 second length limit
+    - 3 channels with a 3.66 second length limit
+
+    TODO: perhaps worth buying a WROOM with more PSRAM or compressing down to 24 or 16 bit for more channels?
+*/
+
+#ifdef THREE_CHANNEL
+    #define NUM_SAMPLER_VOICES 3
+    #define MAX_LENGTH_SAMPLES 161700
+#else
+    #define NUM_SAMPLER_VOICES 4
+    #define MAX_LENGTH_SAMPLES 121275
+#endif
+
+// Ugly typedef/pointer situation but in the interest of not using vector I'll live with it
+#define FILES_TO_SCAN 300
+typedef String SamplePathArr[FILES_TO_SCAN];
+
+
+//------------------------------------------------------------------------------------
+
 enum SampleState : uint8_t
 {
 Idle,
 Playing,
 Retrig
 };
-
 
 class Sample
 {
@@ -33,6 +57,9 @@ class Sample
         // the buffer to be allocated in PSRAM
         float* data;
         uint32_t lengthSamples;
+
+        //helper thing
+        static void getSamplesInDir(SamplePathArr* paths, uint16_t* numSamples, File dir);
     public:
         Sample(const String& path);
         ~Sample();
@@ -40,6 +67,12 @@ class Sample
         float getSample(uint32_t idx) {return data[idx];}
 
         uint32_t getLength() { return lengthSamples; }
+
+        // helper to check if a given WAV on the SD card can be safely used as a sample
+        static bool isValidSampleFile(const String& path);
+
+        // get a list of all the valid sample files on the SD card
+        static void getAvailableSamples(SamplePathArr* paths, uint16_t* numSamples);
 
 };
 

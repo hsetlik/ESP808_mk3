@@ -166,10 +166,17 @@ void setup()
   Expanders::setupExpander2(&expander2);
   Expanders::setupExpander3(&exp3);
 
+  
+
   //initialize the display
   display = new ILI9341(&SPI, DISPLAY_DC, DISPLAY_RST);
   display->begin();
 
+  // initialize SD card
+  if(!SD.begin(SD_CS))
+  {
+    proc.logMessage("Failed to Initialize SD Card!");
+  }
   // set up the neopixels
   FastLED.addLeds<NEOPIXEL, PIXELS>(pixels, NUM_PIXELS);
 

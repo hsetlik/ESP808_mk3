@@ -21,7 +21,7 @@
 
 #define NUM_HARDWARE_TRACKS 8
 
-#define MAX_TRACKS 12
+#define MAX_TRACKS (7 + NUM_SAMPLER_VOICES)
 
 #define TRIGGER_DURATION_MS 15
 
@@ -30,6 +30,7 @@
 #define LOG_LENGTH 6
 
 #define BATT_MAX_MV 3082
+
 /*
     The min battery voltage for the TPS61200 boost converter
     is 300mV, but we'll call 0% 400mV to be safe, which equates
@@ -103,6 +104,9 @@ private:
     float fCurrentStep; 
     uint8_t lastStep;
     unsigned long lastTriggerMs[8];
+
+    // Sampler data
+    SamplerVoice samplerVoices[NUM_SAMPLER_VOICES];
 
     // Color references for pixels
     CRGB trackColorsDim[NUM_HARDWARE_TRACKS];
