@@ -2,6 +2,7 @@
 
 Processor::Processor() : isPlaying(false),
                          currentTempo(TEMPO_DEFAULT),
+                         currentStepMs(STEP_MS_DEFAULT),
                          selectedTrack(0),
                          altDown(false),
                          lastAltClickAt(0),
@@ -16,6 +17,7 @@ Processor::Processor() : isPlaying(false),
                          seq(NUM_HARDWARE_TRACKS),
                          fCurrentStep(0.0f),
                          lastStep(0),
+                         numSamplePaths(0),
                          bkgndColor(Display::to565(0, 0, 0)),
                          textColor(Display::to565(254, 233, 124))
 {
@@ -52,6 +54,10 @@ Processor::Processor() : isPlaying(false),
    // cursor color
    CHSV hsvCursor(35, 110, 110);
    hsv2rgb_rainbow(hsvCursor, cursorColor);
+
+   // scan the SD card (if we have one) for sample files
+   Sample::getAvailableSamples(&samplePaths, &numSamplePaths);
+
 }
 
 //--- Control Handling ---------------------------------
@@ -349,7 +355,7 @@ void Processor::nudgeSelectedTrack(bool up)
       if (selectedTrack == HardwareTrack::Accent)
          --selectedTrack;
    }
-   logMessage("Selected track: " + TrackNames[selectedTrack]);
+   logToDisplay("Selected track: " + TrackNames[selectedTrack]);
 }
 
 void Processor::nudgeStepLevel(uint8_t button, bool up)
@@ -368,7 +374,9 @@ void Processor::nudgeTempo(bool dir)
       currentTempo = std::min<float>(TEMPO_MAX, currentTempo + incr);
    else
       currentTempo = std::max<float>(TEMPO_MIN, currentTempo - incr);
-   logMessage("Tempo: " + String(currentTempo));
+   // calculate this only when the tempo changes rather than with every call to tick()
+   currentStepMs = (unsigned long)(60000.0f / currentTempo);
+   logToDisplay("Tempo: " + String(currentTempo));
 }
 
 Step *Processor::stepForButton(uint8_t b)
@@ -403,7 +411,7 @@ void Processor::handleSequenceKeyClick(uint8_t button)
    uint8_t idx = stepIdxForButton(button);
    Step *step = altKey() ? &seq.tracks[HardwareTrack::Accent].steps[idx] : &seq.tracks[selectedTrack].steps[idx];
    step->on = !step->on;
-   logMessage("Toggled Step " + String(idx));
+   logToDisplay("Toggled Step " + String(idx));
 }
 
 //-Timing -----------------------------------------------------
@@ -441,6 +449,23 @@ void Processor::tick()
       }
    }
    lastTickMs = now;
+}
+
+//------------------------------------------------------
+
+void Processor::renderBuffer(AudioBuffer& buf)
+{
+   float* left;
+   float* right;
+   for(uint16_t s = 0; s < BUFFER_LENGTH; s++)
+   {
+      left = &buf[2 * s];
+      right = &buf[(2 * s) + 1];
+      for(uint8_t t = 0; t < NUM_SAMPLER_VOICES; t++)
+      {
+         samplerVoices[t].renderSample(left, right);
+      }
+   }
 }
 
 //------------------------------------------------------

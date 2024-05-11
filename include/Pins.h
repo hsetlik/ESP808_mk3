@@ -1,5 +1,9 @@
 #pragma once
 #include <Arduino.h>
+
+// sneaky forward declaration for the debug situation
+void debugMsg(const String& msg);
+
  
 
 enum HardwareTrack : uint8_t

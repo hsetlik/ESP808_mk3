@@ -157,6 +157,9 @@ void SamplerVoice::trigger(uint8_t sLevel)
 void SamplerVoice::renderSample(float* left, float* right)
 {
     // this is basically just a finite state machine
+    static float mono;
+    static float dLeft;
+    static float dRight;
     if(!active)
         return;
     switch(state)
@@ -164,9 +167,9 @@ void SamplerVoice::renderSample(float* left, float* right)
         case Idle:
             break;
         case Playing:
-            float mono = sample->getSample(sampleIdx);
-            float dLeft = (mono * netLevel) * pan;
-            float dRight = (mono * netLevel) * (1.0f - pan);
+            mono = sample->getSample(sampleIdx);
+            dLeft = (mono * netLevel) * pan;
+            dRight = (mono * netLevel) * (1.0f - pan);
             *left += dLeft;
             *right += dRight;
             sampleIdx++;
@@ -178,8 +181,9 @@ void SamplerVoice::renderSample(float* left, float* right)
             }
             break;
         case Retrig:
+            {
             float t = (float)retrigIdx / (float)RETRIG_LENGTH;
-            float mono = Audio::fLerp(
+            mono = Audio::fLerp(
                 sample->getSample(sampleIdx) * netLevel, 
                 sample->getSample(retrigIdx) * netRetrigLevel, 
                 t);
@@ -196,6 +200,7 @@ void SamplerVoice::renderSample(float* left, float* right)
                 state = Playing;
             }
             break;
+            }
         default:
             break; 
     }

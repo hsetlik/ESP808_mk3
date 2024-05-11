@@ -34,6 +34,7 @@ the digital voices
 
 
 
+
 //----------------------------------------------------------------
 
 // SPI port expanders
@@ -62,6 +63,14 @@ hw_timer_t* buttonTimer = NULL;
 hw_timer_t* outputTimer = NULL;
 hw_timer_t* audioTimer = NULL;
 //portMUX_TYPE buttonTimerMux = portMUX_INITIALIZER_UNLOCKED;
+
+//implementation of the string logger situation
+
+void debugMsg(const String& msg)
+{
+  Serial.println(msg);
+  proc.logToDisplay(msg);
+}
 
 // ISRs --------------------------------------------------------------------
 // Button stuff
@@ -161,6 +170,10 @@ void setup()
   // start SPI
   SPI.begin(SCK, MISO, MOSI, EXP_CS);
 
+  //initialize the display
+  display = new ILI9341(&SPI, DISPLAY_DC, DISPLAY_RST);
+  display->begin();
+
   // initialize expanders
   Expanders::setupExpander1(&exp1);
   Expanders::setupExpander2(&expander2);
@@ -168,14 +181,10 @@ void setup()
 
   
 
-  //initialize the display
-  display = new ILI9341(&SPI, DISPLAY_DC, DISPLAY_RST);
-  display->begin();
-
   // initialize SD card
   if(!SD.begin(SD_CS))
   {
-    proc.logMessage("Failed to Initialize SD Card!");
+    debugMsg("Failed to initialize SD card!");
   }
   // set up the neopixels
   FastLED.addLeds<NEOPIXEL, PIXELS>(pixels, NUM_PIXELS);
@@ -223,6 +232,10 @@ void setup()
   proc.checkBatteryLevel();
 }
 
+/*
+  This is supposed to keep track of the practical frame rate for the display I guess?
+  I have no memory of writing this but it's probably not hurting anything.
+*/
 unsigned long lastUpdateMs = 0;
 unsigned long lastBatteryCheckMs = 0;
 unsigned long now = 0;
@@ -243,8 +256,9 @@ uint16_t getFrameRate()
 
 void loop() 
 {
-  // 1. advance the processor
+  // 1. Advance the processor
   proc.tick();
+
   // 2. Do any chores for the next round of interrupts as needed
   if(buttonDataReady)
   {
@@ -252,7 +266,7 @@ void loop()
     buttonDataReady = false;
   }
 
-  while(encoderTriggered)
+  if(encoderTriggered)
   {
     encoders.interruptSent(lastEncoderPin);
     encoderTriggered = false;
@@ -264,6 +278,13 @@ void loop()
     gateLevels = proc.getTriggerState();
     newOutputNeeded = false;
   }
+
+  if(needsNewAudio)
+  {
+    //TODO: render the next block of audio from the processor here
+    needsNewAudio = false;
+  }
+
   // 3. check if we need to update our pixels & display
   now = millis();
   if(now - lastUpdateMs > (1000 / DISPLAY_UPDATE_HZ))

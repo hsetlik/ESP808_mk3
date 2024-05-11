@@ -9,6 +9,7 @@
 // definitions for param mins and maxes
 #define TEMPO_MIN 30.0f
 #define TEMPO_DEFAULT 120.0f
+#define STEP_MS_DEFAULT 500
 #define TEMPO_INCREMENT_BIG 2.0f
 #define TEMPO_INCREMENT_SMALL 0.1f
 #define TEMPO_MAX 400.0f
@@ -84,6 +85,7 @@ private:
     // state variables
     bool isPlaying;
     float currentTempo;
+    unsigned long currentStepMs;
     uint8_t selectedTrack;
     bool altDown;
     unsigned long lastAltClickAt;
@@ -107,6 +109,8 @@ private:
 
     // Sampler data
     SamplerVoice samplerVoices[NUM_SAMPLER_VOICES];
+    SamplePathArr samplePaths;
+    uint16_t numSamplePaths;
 
     // Color references for pixels
     CRGB trackColorsDim[NUM_HARDWARE_TRACKS];
@@ -166,7 +170,7 @@ public:
     void updateDisplay(ILI9341* display);
     void updatePixels(CRGB* pixels);
     // for debugging mostly
-    void logMessage(const String& msg)
+    void logToDisplay(const String& msg)
     {
         msgLog.push(msg);
     }
@@ -174,6 +178,8 @@ public:
     void checkBatteryLevel();
 
     void updateFrameRate(uint16_t fps) { currentFrameRate = fps; }
+
+    void renderBuffer(AudioBuffer& buf);
 
 };
 
