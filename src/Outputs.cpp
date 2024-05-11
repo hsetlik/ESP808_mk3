@@ -20,7 +20,7 @@ void MCP4331::setLevel(SPIClass *spi, uint8_t cs, uint8_t idx, uint8_t level)
         cmd = (1 << 13) | (1 << 14) | (1 << 12);
         break;
     default:
-        Serial.println("Error! Invalid potentiometer index: " + String(idx));
+        debugMsg("Error! Invalid potentiometer index: " + String(idx));
         break;
     }
     cmd = cmd | (uint16_t)level;
@@ -49,13 +49,13 @@ void MCP4331::setLevels(SPIClass *spi, uint8_t cs, uint32_t data)
             cmd = (1 << 13) | (1 << 14) | (1 << 12);
             break;
         default:
-            Serial.println("Error! Invalid potentiometer index: " + String(p));
+            debugMsg("Error! Invalid potentiometer index: " + String(p));
             break;
         }
         cmd = cmd | (uint16_t)level;
         if (spi->transfer16(cmd) != 65535)
         {
-            Serial.println("Failed to transmit potentiometer SPI bits!");
+            debugMsg("Failed to transmit potentiometer SPI bits!");
         }
     }
     digitalWrite(cs, HIGH);

@@ -6,7 +6,7 @@ void Expanders::setupExpander1(Adafruit_MCP23X17* exp)
 {
     if(!exp->begin_SPI(EXP_CS, &SPI, EXP_1_ADDR))
     {
-        Serial.println("Failed to initialize Expander 1!");
+        debugMsg("Failed to initialize Expander 1!");
     }
 
     exp->pinMode(0, INPUT_PULLUP);
@@ -31,7 +31,7 @@ void Expanders::setupExpander2(Adafruit_MCP23X17* exp)
 {
     if(!exp->begin_SPI(EXP_CS, &SPI, EXP_2_ADDR))
     {
-        Serial.println("Failed to initialize Expander 2!");
+        debugMsg("Failed to initialize Expander 2!");
     }
 
     exp->pinMode(PG_LEFT, INPUT_PULLUP);
@@ -71,7 +71,7 @@ void Expanders::setupExpander3(Adafruit_MCP23X17* exp)
 {
     if(!exp->begin_SPI(EXP_CS, &SPI, EXP_3_ADDR))
     {
-        Serial.println("Failed to initialize Expander 3!");
+        debugMsg("Failed to initialize Expander 3!");
     }
 
     // set up triger pins

@@ -418,8 +418,7 @@ void Processor::handleSequenceKeyClick(uint8_t button)
 
 unsigned long Processor::stepDurationMs()
 {
-   unsigned long quarterNoteMs = 60000 / (unsigned long)currentTempo;
-   return quarterNoteMs / 2;
+   return currentStepMs;
 }
 
 //------------------------------------------------------

@@ -51,7 +51,7 @@ WAVMetadata Audio::getMetadataFor(const String &name)
         // the total header should be 44 bytes long
         char header[44];
         if (file.readBytes(header, 44) != 44)
-            Serial.println("Failed to read WAV header at: " + name);
+            debugMsg("Failed to read WAV header at: " + name);
         file.close();
         // the channel mode is a 16 bit word at bytes 22 & 23
         uint16_t channelMode = ((uint16_t)header[22] << 8) | (uint16_t)header[23];
@@ -90,7 +90,7 @@ bool Audio::mixDownAudio(WAVMetadata &wav, float *buffer)
     auto file = SD.open(wav.fileName);
     if (!file.seek(44))
     {
-        Serial.println("Could not seek past header for file: " + wav.fileName);
+        debugMsg("Could not seek past header for file: " + wav.fileName);
         return false;
     }
 
@@ -208,10 +208,10 @@ void PCM510xA::init()
     if (installErr != ESP_OK)
     {
         String errName = esp_err_to_name(installErr);
-        Serial.println("I2S install failed with error: " + errName);
+        debugMsg("I2S install failed with error: " + errName);
     }
     else
-        Serial.println("I2S install succeded");
+        debugMsg("I2S install succeded");
 
     // 2. Set up pin config
     pinConfig.bck_io_num = bckPin;
@@ -224,10 +224,10 @@ void PCM510xA::init()
     if (pinErr != ESP_OK)
     {
         String errName = esp_err_to_name(pinErr);
-        Serial.println("I2S pin setup failed with error: " + errName);
+        debugMsg("I2S pin setup failed with error: " + errName);
     }
     else
-        Serial.println("I2S pin setup succeeded");
+        debugMsg("I2S pin setup succeeded");
 
     i2s_zero_dma_buffer((i2s_port_t)port);
 }
@@ -246,10 +246,10 @@ void PCM510xA::transmitBuffer(AudioBuffer &buf)
     if(i2sErr != ESP_OK)
     {
         String errName = esp_err_to_name(i2sErr);
-        Serial.println("I2S PCM transmission failed with error: " + errName);      
+        debugMsg("I2S PCM transmission failed with error: " + errName);      
     }
     else if(bytesWritten != AUDIO_BUFFER_BYTES)
     {
-        Serial.println("Warning! Only wrote " + String(bytesWritten) + " bytes of intended " + String(AUDIO_BUFFER_BYTES));
+        debugMsg("Warning! Only wrote " + String(bytesWritten) + " bytes of intended " + String(AUDIO_BUFFER_BYTES));
     }
 }

@@ -13,6 +13,8 @@ using ILI9341 = Adafruit_ILI9341;
 namespace Display
 {
     uint16_t to565(uint8_t r, uint8_t g, uint8_t b);
+    // helpers for drawing each component of the UI
+    
 }
 
 //-------------------------------------------------

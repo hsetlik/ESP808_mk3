@@ -6,11 +6,11 @@ Sample::Sample(const String &name) : fileName(name),
 {
     if (!SD.exists(fileName))
     {
-        Serial.println("Error! No valid file at path: " + fileName);
+        debugMsg("Error! No valid file at path: " + fileName);
     }
     if (!Audio::isValidWAV(fileName))
     {
-        Serial.println("Error! Invalid WAV file at: " + fileName);
+        debugMsg("Error! Invalid WAV file at: " + fileName);
     }
     auto metadata = Audio::getMetadataFor(fileName);
     lengthSamples = metadata.lengthSamples;
@@ -20,7 +20,7 @@ Sample::Sample(const String &name) : fileName(name),
 
     // now we do the rendering
     if (!Audio::mixDownAudio(metadata, data))
-        Serial.println("Error! Failed to mix down audio");
+        debugMsg("Error! Failed to mix down audio");
 }
 
 Sample::~Sample()
@@ -106,7 +106,7 @@ SamplerVoice::SamplerVoice(const String &path) : sample(nullptr),
     }
     else
     {
-        Serial.println("Error! No Valid WAV file at " + path);
+        debugMsg("Error! No Valid WAV file at " + path);
     }
 }
 
